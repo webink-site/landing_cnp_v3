@@ -5,15 +5,11 @@
 
             <div class="row wow fadeIn" v-if="!user">
             	<div class="col-lg-4">
+
             		<label for="">Регестрируйтесь или введите почту</label>
 					<input type="text" placeholder="Почта" v-model="name" 
 					:class="{errorInp : ($v.name.$dirty && !$v.name.required) || ($v.name.$dirty && !$v.name.email)}">
-					<div id="createPass" v-if="passVisible">
-						<label for="">Придумайте пароль</label>
-						<input type="password" placeholder="Почта" v-model="pass"
-						:class="{errorInp : ($v.pass.$dirty && !$v.pass.required) || ($v.pass.$dirty && !$v.pass.minLength)}">
-					</div>
-					<p class="small-grey">И нажмите <span class="blue-text sz-14">Купить</span></p>
+
 				</div>
             </div>
 
@@ -29,7 +25,7 @@
 
                     <div class="learn__item-descr">До 1 декабря выгода 2 000 ₽</div>
 
-                    <a class="item__btn-link" @click="startPay(4990)">Купить</a>
+                    <a class="item__btn-link" @click="startPay(20)">Купить</a>
                     <ul class="item__text-block">
                         <li><p>Доступ ко всем урокам курса</p></li>
                         <li><p>Разбор некоторых работ участников курса на онлайн-конференции</p></li>
@@ -48,7 +44,7 @@
 
                     <div class="learn__item-descr">До 1 декабря выгода 3 000 ₽</div>
 
-                    <a class="item__btn-link" @click="startPay(9990)">Купить</a>
+                    <a class="item__btn-link" @click="startPay(20)">Купить</a>
                     <ul class="item__text-block">
                         <li><p>Доступ ко всем урокам курса</p></li>
                         <li><p>Разбор некоторых работ участников курса на онлайн-конференции</p></li>
@@ -69,7 +65,7 @@
 
                     <div class="learn__item-descr">До 1 декабря выгода 10 000 ₽</div>
 
-                    <a class="item__btn-link" @click="startPay(19990)">Купить</a>
+                    <a class="item__btn-link" @click="startPay(20)">Купить</a>
                     <ul class="item__text-block">
                         <li><p>Доступ ко всем урокам курса</p></li>
                         <li><p>Разбор некоторых работ участников курса на онлайн-конференции</p></li>
@@ -99,15 +95,9 @@ import {mapActions, mapState, mapGetters} from 'vuex'
 		data(){
 			return{
 				name: '',
-				pass: '',
-				passVisible: false
 			}
 		},
-		validations: {
-			pass: {
-				required,
-				minLength: minLength(7)
-			},	
+		validations: {	
 			name: {
 				required, 
 				email
@@ -117,15 +107,19 @@ import {mapActions, mapState, mapGetters} from 'vuex'
 			...mapGetters({user: "smeta/getUser"})
 		},
 		methods: {
+			...mapActions({
+	    		AUTH_REQUEST: "smeta/AUTH_REQUEST",
+	    	}),
 			startPay(param){
 
 				if(this.user){
 					console.log('вы авторизированные, идем платить')
 
 					let form = {
-						user_id: this.user.id,
-						price: param
+						user_email: this.user.user_email,
+						cost: param
 					}
+
 					this.goPay(form)
 					return
 				}
@@ -135,46 +129,29 @@ import {mapActions, mapState, mapGetters} from 'vuex'
 					return;
 				}
 
-				axios
-				.get('https://nikitapugachev.com/wp-json/np/v1/exist/user?email=' + this.name)
-				.then(res =>{
 
-					let form = {
-							user_email: this.name,
-							price: param
-						}
+				let form = {
+					user: this.name,
+					cost: param
+				}
 
-
-					if(this.$v.pass.$invalid && this.passVisible == true) {
-						this.$v.pass.$touch();
-						return;
-					}
-
-					if(this.passVisible == true){
-						console.log('Идем платить зареганые')
-						this.goPayNew(form)
-
-					}else if(res.data.status === 'Пользователь существует.'){
-						console.log('Идем платить')
-						this.goPayNew(form)
-
-					}else{
-						console.log('Придумываем пароль')
-						this.passVisible = true
-					}
-				}).catch(error => console.log(error))
+				this.goPayNew(form)
+				
 			},
+
+// оплата
+
 			goPay(form){
 				var widget = new cp.CloudPayments();
 
 			      widget.pay(
 			        "auth",
 			        {
-			          publicId: "pk_1ca6aec798da797a3092eea9157f7",
-			          description: "Покупка курса за: " + form.price + "₽",
-			          amount: form.price,
+			          publicId: "pk_463a52fd1f96e20662138f9fec087",
+			          description: "Покупка курса за: " + form.cost + "₽",
+			          amount: form.cost,
 			          currency: "RUB",
-			          accountId: this.user.user_email,
+			          accountId: form.user_email,
 			          skin: "mini",
 			          data: {
 			            myProp: "myProp value",
@@ -183,29 +160,34 @@ import {mapActions, mapState, mapGetters} from 'vuex'
 			        {
 			          onSuccess: function (options) {
 
+			          	console.log(form)
+
 			            axios
 						.post('https://nikitapugachev.com/wp-json/np/v1/change/usertype', form)
 						.then(res =>{
-							console.log(res)
+							this.$router.replace("/enter");
 
 						}).catch(error => alert(error))
+
+
 			          },
 			          onFail: function (reason, options) {},
 			          onComplete: function (paymentResult, options) {},
 			        }
 			      );
 			},
+// оплата новый
 			goPayNew(form){
 				var widget = new cp.CloudPayments();
 
 			      widget.pay(
 			        "auth",
 			        {
-			          publicId: "pk_1ca6aec798da797a3092eea9157f7",
-			          description: "Покупка курса за: " + form.price + "₽",
-			          amount: form.price,
+			          publicId: "pk_463a52fd1f96e20662138f9fec087",
+			          description: "Покупка курса за: " + form.cost + "₽",
+			          amount: form.cost,
 			          currency: "RUB",
-			          accountId: form.user_id,
+			          accountId: form.user,
 			          skin: "mini",
 			          data: {
 			            myProp: "myProp value",
@@ -214,13 +196,45 @@ import {mapActions, mapState, mapGetters} from 'vuex'
 			        {
 			          onSuccess: function (options) {
 
-			            this.$router.push('/enter')
+			          		axios
+							.post('https://nikitapugachev.com/wp-json/np/v1/change/usertype', form)
+							.then(res =>{
+
+
+								if(res.data.status_user === 'Пользователь не найден, создаем нового' ){
+									let uerDate = {
+										username: form.user,
+				        				password: res.data.password,
+									}
+									console.log(uerDate)
+									
+									 this.AUTH_REQUEST(uerDate).then(() => {
+								        this.$router.replace("/course");
+								      });
+
+								}else{
+									return
+								}
+								
+
+							}).catch(error => alert(error))
+
+
 			          },
 			          onFail: function (reason, options) {},
-			          onComplete: function (paymentResult, options) {},
+			          onComplete: function (paymentResult, options) {
+			          	
+				          	if(paymentResult.success){
+								console.log(paymentResult)
+				          	}else{
+				          		return
+				          	}
+
+			          },
 			        }
 			      );
 			}
+
 		}
 	}
 </script>

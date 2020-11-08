@@ -15,12 +15,13 @@
 			}
 		},
 		mounted(){
+			let pageHeight = document.documentElement.scrollHeight;
 			let headerHeight = document.querySelector('.header').clientHeight;
 
 			window.addEventListener('scroll', ()=>{
 				let winScroll = document.documentElement.scrollTop;
 
-				if(winScroll > headerHeight){
+				if(winScroll > headerHeight && winScroll < pageHeight - 1000){
 					this.salebarActive = true
 				}else{
 					this.salebarActive = false
