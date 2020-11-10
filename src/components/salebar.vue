@@ -1,6 +1,6 @@
 <template>
 	<div class="salebar" :class="{acSale: salebarActive}">
-		<p>Полный курс со скидкой 30% до 1 декабря</p>
+		<p>Полный курс со скидкой 20% до 1 декабря</p>
 		
 			<button class="shapka-btn" v-scroll-to="'#price'">Купить</button>
 

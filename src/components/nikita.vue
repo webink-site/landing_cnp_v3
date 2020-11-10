@@ -36,7 +36,7 @@
 		height: 100%;
 	}
 	.nikita-img{
-		background-image: url('https://nikitapugachev.com/wp-content/uploads/2020/11/nik_true.jpg');
+		background-image: url('https://nikitapugachev.com/wp-content/uploads/2020/11/img_4337-1.jpg');
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;

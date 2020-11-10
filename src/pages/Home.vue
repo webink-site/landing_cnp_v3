@@ -62,7 +62,7 @@
 
 
 <section class="about">
-    <div class="container">
+    <div class="container max-1000">
             <div class="col-lg-12">
             <h1 class="learn__title wow text-center">Практика</h1>
         </div>
@@ -296,7 +296,7 @@
                 <div class="step__item-text">
                     <div class="step__item-num">4</div>
                     <h3 class="step__item-title">Получаешь портфолио</h3>
-                    <div class="step__item-descr">Для поиска новых проектов <br> и интересных клиетов</div>
+                    <div class="step__item-descr">Для поиска новых проектов <br> и интересных клиентов</div>
                 </div>
                 <div class="step__item-img">
                     <img src="https://nikitapugachev.com/wp-content/themes/np/assets/img/step__4.svg" alt="">
