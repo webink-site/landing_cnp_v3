@@ -33,10 +33,11 @@ export default{
             swiperOptions: {
                   slidesPerView: 1,
                   spaceBetween: 0,
-                  draggable: true,
+                  draggable: false,
                   loop: true,    
                   autoplay: {
-                    delay: 2000,
+                    delay: 4000,
+                     disableOnInteraction: false
                   },
                   infinite: true,
                   effect: 'fade',

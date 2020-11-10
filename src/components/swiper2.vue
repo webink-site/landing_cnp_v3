@@ -38,7 +38,8 @@ export default{
                   draggable: true,
                   loop: true,    
                   autoplay: {
-                    delay: 2000,
+                    delay: 4000,
+                    disableOnInteraction: false
                   },
                   infinite: true,
                   effect: 'fade',

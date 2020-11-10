@@ -1,15 +1,15 @@
 <template>
 	 <section class="price" id="price">
         <div class="container">
-            <h1 class="price__title  wow">Тарифы и стоимость</h1>
+            <h1 class="price__title">Тарифы и стоимость</h1>
 
-            <div class="row wow fadeIn" v-if="!user" id="mailView">
+            <div class="row fadeIn" v-if="!user" id="mailView">
             	<div class="col-lg-4">
 
-            		<label for="">Регестрируйтесь или введите почту</label>
-					<input type="text" placeholder="Почта" v-model="name" 
-					:class="{errorInp : ($v.name.$dirty && !$v.name.required) || ($v.name.$dirty && !$v.name.email)}">
-
+            		<label for="">Заполните поле для покупки</label>
+					<input type="text" placeholder="Почта" v-model="name" @input="getCheck()"
+					:class="{errorInp : ($v.name.$dirty && !$v.name.required) || ($v.name.$dirty && !$v.name.email), 'chmark' : checkmark}">
+					<!-- <img src="../assets/img/checkmark.svg" class="chmark"> -->
 				</div>
             </div>
 
@@ -95,6 +95,7 @@ import {mapActions, mapState, mapGetters} from 'vuex'
 		data(){
 			return{
 				name: '',
+				checkmark: false
 			}
 		},
 		validations: {	
@@ -107,6 +108,15 @@ import {mapActions, mapState, mapGetters} from 'vuex'
 			...mapGetters({user: "smeta/getUser"})
 		},
 		methods: {
+			getCheck(){
+				if(this.$v.name.$invalid) {
+					this.$v.name.$touch();
+					this.checkmark = false
+					return
+				}else{
+					this.checkmark = true
+				}
+			},
 			...mapActions({
 	    		AUTH_REQUEST: "smeta/AUTH_REQUEST",
 	    	}),
@@ -270,5 +280,11 @@ import {mapActions, mapState, mapGetters} from 'vuex'
 	}
 	.errorInp{
 		border:2px #f44336 solid!important;
+	}
+	.chmark{
+		background-size: 20px;
+		background-image: url(../assets/img/checkmark.svg);
+		background-position: right 10px center;
+		background-repeat: no-repeat;
 	}
 </style>

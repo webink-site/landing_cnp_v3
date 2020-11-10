@@ -1,9 +1,9 @@
 <template>
 	<div class="salebar" :class="{acSale: salebarActive}">
 		<p>Полный курс со скидкой 30% до 1 декабря</p>
-		<a href="#price">
-			<button class="shapka-btn">Купить</button>
-		</a>
+		
+			<button class="shapka-btn" v-scroll-to="'#price'">Купить</button>
+
 	</div>
 </template>
 

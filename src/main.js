@@ -6,8 +6,11 @@ import store from './store'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import VueTheMask from 'vue-the-mask'
 import Vuelidate from 'vuelidate'
+import VueScrollTo from 'vue-scrollto'
 import 'vuetify/dist/vuetify.min.css'
 
+ 
+Vue.use(VueScrollTo)
 
 import VueCoreVideoPlayer from 'vue-core-video-player'
 

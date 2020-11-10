@@ -1279,6 +1279,9 @@ outline-width: 0;
 	.minivid{
 		height: inherit;
 	}
+	.about{
+		padding-bottom: 0;
+	}
 }
 
 
