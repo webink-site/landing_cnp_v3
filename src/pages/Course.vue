@@ -24,7 +24,7 @@
 			<div class="col-lg-4 col-md-4">
 				<div class="under-scroll">
 					<h3>Бюджетная фуд-съемка для начинающих</h3>
-				<div class="learn__item-descr">32 Урока • 1 час 48 мин</div>
+				<div class="learn__item-descr">{{lessons.length}} Уроков • 3 часа 11 мин</div>
 				</div>
 				<div class="scroll-row">
 					<div class="lesson-btn" 

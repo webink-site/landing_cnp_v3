@@ -333,10 +333,10 @@ transition: all 0.3s ease;
 top: 33px;
 }
 @media (max-width: 768px) {
-.header__subtitle{
-font-size: 18px;
-line-height: 21px;
-}
+	.header__subtitle{
+		font-size: 18px;
+		line-height: 21px;
+	}
 }
 @media (max-width: 420px) {
 .header__btn{
@@ -363,17 +363,17 @@ font-weight: 400;
 }
 /*Format adaptive*/
 @media (max-width: 991px) {
-.format__item{
-margin: 0 auto;
-margin-top: 100px;
-width: 400px;
-}
-.format__item:first-child{
-margin-top: 0;
-}
-.format__item:nth-last-child(1){
-margin-right: auto;
-}
+	.format__item{
+	margin: 0 auto;
+	margin-top: 100px;
+	width: 400px;
+	}
+	.format__item:first-child{
+	margin-top: 0;
+	}
+	.format__item:nth-last-child(1){
+	margin-right: auto;
+	}
 }
 @media (max-width: 768px) {
 .format__item-subtitle{

@@ -43,6 +43,35 @@
 		height: 100%;
 		width: 50%;
 	}
+	@media (max-width: 1024px) {
+		#nikita{
+			flex-wrap: wrap;
+			height: inherit;
+		}
+		.nikita-about{
+			width: 100%;
+		}
+		.nikita-img{
+			width: 100%;
+			height: 900px;
+		}
+		.learn__item{
+			min-height:280px;
+		}
+	}
+	@media (max-width: 991px) {
+		#nikita{
+			flex-wrap: wrap;
+			height: inherit;
+		}
+		.nikita-about{
+			width: 100%;
+		}
+		.nikita-img{
+			width: 100%;
+			height: 700px;
+		}
+	}
 	@media (max-width: 512px) {
 		#nikita{
 			flex-wrap: wrap;

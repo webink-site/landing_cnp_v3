@@ -3,7 +3,7 @@
         <div class="container">
             <h1 class="price__title  wow">Тарифы и стоимость</h1>
 
-            <div class="row wow fadeIn" v-if="!user">
+            <div class="row wow fadeIn" v-if="!user" id="mailView">
             	<div class="col-lg-4">
 
             		<label for="">Регестрируйтесь или введите почту</label>
@@ -25,7 +25,7 @@
 
                     <div class="learn__item-descr">До 1 декабря выгода 2 000 ₽</div>
 
-                    <a class="item__btn-link" @click="startPay(20)">Купить</a>
+                    <a class="item__btn-link" @click="startPay(4990)">Купить</a>
                     <ul class="item__text-block">
                         <li><p>Доступ ко всем урокам курса</p></li>
                         <li><p>Разбор некоторых работ участников курса на онлайн-конференции</p></li>
@@ -44,7 +44,7 @@
 
                     <div class="learn__item-descr">До 1 декабря выгода 3 000 ₽</div>
 
-                    <a class="item__btn-link" @click="startPay(20)">Купить</a>
+                    <a class="item__btn-link" @click="startPay(9990)">Купить</a>
                     <ul class="item__text-block">
                         <li><p>Доступ ко всем урокам курса</p></li>
                         <li><p>Разбор некоторых работ участников курса на онлайн-конференции</p></li>
@@ -65,7 +65,7 @@
 
                     <div class="learn__item-descr">До 1 декабря выгода 10 000 ₽</div>
 
-                    <a class="item__btn-link" @click="startPay(20)">Купить</a>
+                    <a class="item__btn-link" @click="startPay(19990)">Купить</a>
                     <ul class="item__text-block">
                         <li><p>Доступ ко всем урокам курса</p></li>
                         <li><p>Разбор некоторых работ участников курса на онлайн-конференции</p></li>
@@ -126,6 +126,8 @@ import {mapActions, mapState, mapGetters} from 'vuex'
 
 				if(this.$v.name.$invalid) {
 					this.$v.name.$touch();
+					let mailView = document.querySelector('#mailView')
+					mailView.scrollIntoView({block: "center", behavior: "smooth"});
 					return;
 				}
 
@@ -143,11 +145,12 @@ import {mapActions, mapState, mapGetters} from 'vuex'
 
 			goPay(form){
 				var widget = new cp.CloudPayments();
+				const vm = this;
 
 			      widget.pay(
-			        "auth",
+			        "charge",
 			        {
-			          publicId: "pk_463a52fd1f96e20662138f9fec087",
+			          publicId: "pk_1ca6aec798da797a3092eea9157f7",
 			          description: "Покупка курса за: " + form.cost + "₽",
 			          amount: form.cost,
 			          currency: "RUB",
@@ -165,7 +168,7 @@ import {mapActions, mapState, mapGetters} from 'vuex'
 			            axios
 						.post('https://nikitapugachev.com/wp-json/np/v1/change/usertype', form)
 						.then(res =>{
-							this.$router.replace("/enter");
+							vm.$router.replace("/enter");
 
 						}).catch(error => alert(error))
 
@@ -179,11 +182,12 @@ import {mapActions, mapState, mapGetters} from 'vuex'
 // оплата новый
 			goPayNew(form){
 				var widget = new cp.CloudPayments();
+				const vm = this;
 
 			      widget.pay(
-			        "auth",
+			        "charge",
 			        {
-			          publicId: "pk_463a52fd1f96e20662138f9fec087",
+			          publicId: "pk_1ca6aec798da797a3092eea9157f7",
 			          description: "Покупка курса за: " + form.cost + "₽",
 			          amount: form.cost,
 			          currency: "RUB",
@@ -196,29 +200,29 @@ import {mapActions, mapState, mapGetters} from 'vuex'
 			        {
 			          onSuccess: function (options) {
 
+			          	 alert('Ваш пароль отправлен на почту ' + form.user)
+
 			          		axios
 							.post('https://nikitapugachev.com/wp-json/np/v1/change/usertype', form)
 							.then(res =>{
 
-
 								if(res.data.status_user === 'Пользователь не найден, создаем нового' ){
-									let uerDate = {
+									let userDate = {
 										username: form.user,
 				        				password: res.data.password,
 									}
-									console.log(uerDate)
+									console.log(userDate)
 									
-									 this.AUTH_REQUEST(uerDate).then(() => {
-								        this.$router.replace("/course");
+									 vm.AUTH_REQUEST(userDate).then(() => {
+								        vm.$router.replace("/course");
+								 
 								      });
 
 								}else{
 									return
 								}
 								
-
 							}).catch(error => alert(error))
-
 
 			          },
 			          onFail: function (reason, options) {},
