@@ -66,9 +66,7 @@ var elem = document.getElementById("myvideo");
 			},
 			showFsc(){
 				const vid = document.querySelector('.vcp-container video')
-
 				vid.webkitEnterFullscreen();
-
 			}
 		},
 		mounted(){
