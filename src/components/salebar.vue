@@ -34,10 +34,10 @@
 <style scoped>
 	.salebar{
 		z-index: 100;
-		position: fixed;
+		position: sticky;
 		width: 100%;
 		left: 0;
-		bottom: -120px;
+		top: 0;
 		background: linear-gradient(180deg, #2E97E6 0%, #63B2EC 100%);
 		display: flex;
 		justify-content: center;

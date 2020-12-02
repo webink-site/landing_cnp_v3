@@ -1,7 +1,7 @@
 <template>
 	<div>
 		
-<salebar />
+
 
 
 <div class="bgfon">
@@ -29,6 +29,9 @@
 </header>
 
 
+<salebar />
+
+
 
 <section class="format">
     <div class="container ">
@@ -37,7 +40,7 @@
                     <h2>Когда</h2>
                 </div>
                 <div class="format__item-subtitle">
-                    <span>Обучение начинается сразу после <br>получения доступа.</span>
+                    <span>4 января - 24 января.</span>
                 </div>
             </div>
             <div class="col-lg-4 format__item wow">
@@ -112,7 +115,7 @@
               
                     <div class="rowjh">
                         <div class="col-lg-4 portfolio__video">
-                                    <iframe src="https://player.vimeo.com/video/476270895" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                                    <iframe src="https://player.vimeo.com/video/477110526" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                                 </div>
 
                                 <div class="col-lg-4 portfolio__video">

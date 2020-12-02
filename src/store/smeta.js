@@ -25,6 +25,9 @@ const smeta = {
             setTimeout(function(){
                 state.snack = false;
             }, 5000);
+        },
+        SET_TAGS(state, payload){
+            state.user.tags = payload
         }
 	},
 	actions: {
@@ -79,6 +82,9 @@ const smeta = {
             localStorage.removeItem("user");
             commit("SET_TOKEN", null);
             commit("SET_USER", null);
+        },
+        UPDATE_TAGS({commit}, payload){
+            commit("SET_TAGS", payload);
         }
 	},
 	getters: {
@@ -101,14 +107,14 @@ const smeta = {
             }
 
             return result
-
-            // let result = state.user.roles.toString()
-            // if(result === 'contributor'){
-            //     return false
-            // }else{
-            //     return true
-            // }
             
+        },
+        getPotok(state){
+            if(state.user.tags !== null && state.user.tags.includes('FOOD2')){
+                return true
+            }else{
+                return false
+            }
         }
 	}
 }

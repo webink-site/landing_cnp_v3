@@ -19,19 +19,19 @@
                     <h3 class="item__title">Слушатель</h3>
 
                     <div class="prices">
-                        <p class="old-price">6 990</p>
-                        <p class="sale-price">4 990 ₽</p>
+                        <!-- <p class="old-price">6 990</p> -->
+                        <p class="sale-price">6 990 ₽</p>
                     </div>
 
-                    <div class="learn__item-descr">До 1 декабря выгода 2 000 ₽</div>
+                    <div class="learn__item-descr">Повышение цены 28 декабря</div>
 
-                    <a class="item__btn-link" @click="startPay(4990)">Купить</a>
+                    <a class="item__btn-link" @click="startPay(6990)">Купить</a>
                     <ul class="item__text-block">
-                        <li><p>Начало обучения сразу после оплаты курса</p></li>
-                        <li><p>Доступ ко всем 45 урокам открывается сразу</p></li>
+                        <li><p>Доступ ко всем 45 урокам</p></li>
                         <li><p>Доступ к вебинарам с разбором лучших работ участников на предмет ошибок</p></li>
                         <li><p>Возможность просматривать уроки в любое время</p></li>
-                        <li><p>Постоянный доступ к урокам с любого устройства</p></li>
+                        <li><p>Доступ к урокам с любого устройства</p></li>
+                        <li><p>Закрытый чат для участников</p></li>
                         <li><p class="item__text-block--blue-text">Участник выполняет задание самостоятельно, без обратной связи от куратора курса</p></li>
                     </ul>
                 </div>
@@ -40,25 +40,25 @@
                     <h3 class="item__title">Ученик</h3>
 
                     <div class="prices">
-                        <p class="old-price">12 990</p>
-                        <p class="sale-price">9 990 ₽</p>
+                        <!-- <p class="old-price">12 990</p> -->
+                        <p class="sale-price">12 990 ₽</p>
                     </div>
 
-                    <div class="learn__item-descr">До 1 декабря выгода 3 000 ₽</div>
+                    <div class="learn__item-descr">Повышение цены 28 декабря</div>
 
-                    <a class="item__btn-link" @click="startPay(9990)">Купить</a>
+                    <a class="item__btn-link" @click="startPay(12990)">Купить</a>
                     <ul class="item__text-block">
-                        <li><p>Начало обучения сразу после оплаты</p></li>
-                        <li><p>Доступ ко всем 45 урокам открывается сразу</p></li>
+                        <li><p>Доступ ко всем 45 урокам</p></li>
                         <li><p>Вебинары с разбором лучших работ участников на предмет ошибок</p></li>
                         <li><p>Обратная связь и проверка домашнего задания куратором курса</p></li>
                         <li><p>Возможность просматривать уроки в любое время</p></li>
-                        <li><p>Постоянный доступ к урокам с любого устройства</p></li>
+                        <li><p>Доступ к урокам с любого устройства</p></li>
+                        <li><p>Закрытый чат для участников</p></li>
                         <li><p>Доступ ко всем отснятым материалам курса для личного использования</p></li>
-                        <li><p>Библиотека звуков и музыкальных треков из роликов с курса</p></li>
+                        <li><p>Библиотека звуков и музыкальных треков из роликов</p></li>
                         <li><p>Сертификат о прохождении курса</p></li>
                         <li><p>Доступ в закрытый чат после прохождения курса</p></li>
-                        <li><p class="item__text-block--blue-text">Участник выполняет задание и получает обратную связь от куратора курса</p></li>
+                        <li><p class="item__text-block--blue-text">Участник выполняет задание и получает обратную связь от куратора курса в общем чате</p></li>
                     </ul>
                 </div>
                 <div class="col-xl-4 price__box-item price__third-box wow">
@@ -66,28 +66,27 @@
                     <h3 class="item__title">Персональный</h3>
 
                     <div class="prices">
-                        <p class="old-price">29 990</p>
-                        <p class="sale-price">19 990 ₽</p>
+                        <!-- <p class="old-price">29 990</p> -->
+                        <p class="sale-price">29 990 ₽</p>
                     </div>
 
-                    <div class="learn__item-descr">До 1 декабря выгода 10 000 ₽</div>
+                    <div class="learn__item-descr">Повышение цены 28 декабря</div>
 
-                    <a class="item__btn-link" @click="startPay(19990)">Купить</a>
+                    <a class="item__btn-link" @click="startPay(29990)">Купить</a>
                     <ul class="item__text-block">
-                        <li><p>Начало обучения сразу после оплаты</p></li>
-                        <li><p>Доступ ко всем 45 урокам открывается сразу</p></li>
+                        <li><p>Доступ ко всем 45 урокам</p></li>
                         <li><p>Вебинары с разбором работ участников на предмет ошибок</p></li>
                         <li><p>Персональный разбор всего проекта в конце обучения, на предмет ошибок</p></li>
                         <li><p>Возможность просматривать уроки в любое время</p></li>
-                        <li><p>Постоянный доступ к урокам с любого устройства</p></li>
+                        <li><p>Доступ к урокам с любого устройства</p></li>
+                        <li><p>Закрытый чат для участников</p></li>
                         <li><p>Доступ ко всем отснятым материалам курса для личного использования</p></li>
-                        <li><p>Библиотека звуков и музыкальных треков из роликов с курса</p></li>
-                        <li><p>Доступ в закрытый чат после прохождения курса</p></li>
+                        <li><p>Библиотека звуков и музыкальных треков из роликов</p></li>
+                        <li><p>Доступ в закрытый чат после прохождения курсаv</p></li>
                         <li><p>Сертификат о прохождении курса</p></li>
                         
                         <li><p class="item__text-block--blue-text">Персональный разбор всех вопросов по курсу, помощь в подготовке съемке, постановке света и обработке материала</p></li>
                         <li><p class="item__text-block--blue-text">Две получасовые конференции с разбором вопросов ученика</p></li>
-                        <li><p class="item__text-block--blue-text">Доступ к дополнительным обучающим материалам</p></li>
                     </ul>
                 </div>
             </div>
@@ -130,6 +129,7 @@ import {mapActions, mapState, mapGetters} from 'vuex'
 			},
 			...mapActions({
 	    		AUTH_REQUEST: "smeta/AUTH_REQUEST",
+	    		UPDATE_TAGS: "smeta/UPDATE_TAGS",
 	    	}),
 			startPay(param){
 
@@ -137,8 +137,9 @@ import {mapActions, mapState, mapGetters} from 'vuex'
 					console.log('вы авторизированные, идем платить')
 
 					let form = {
-						user_email: this.user.user_email,
-						cost: param
+						user: this.user.user_email,
+						cost: param,
+						tag: 'FOOD2'
 					}
 
 					this.goPay(form)
@@ -155,7 +156,8 @@ import {mapActions, mapState, mapGetters} from 'vuex'
 
 				let form = {
 					user: this.name,
-					cost: param
+					cost: param,
+					tag: 'FOOD2'
 				}
 
 				this.goPayNew(form)
@@ -175,7 +177,7 @@ import {mapActions, mapState, mapGetters} from 'vuex'
 			          description: "Покупка курса за: " + form.cost + "₽",
 			          amount: form.cost,
 			          currency: "RUB",
-			          accountId: form.user_email,
+			          accountId: form.user,
 			          skin: "mini",
 			          data: {
 			            myProp: "myProp value",
@@ -184,12 +186,16 @@ import {mapActions, mapState, mapGetters} from 'vuex'
 			        {
 			          onSuccess: function (options) {
 
-			          	console.log(form)
-
+			          	// console.log(form)
+			          	// return
 			            axios
 						.post('https://nikitapugachev.com/wp-json/np/v1/change/usertype', form)
 						.then(res =>{
-							vm.$router.replace("/enter");
+
+							// console.log(res)
+							vm.UPDATE_TAGS(res.data.tags).then(() => {
+								vm.$router.replace("/see-you-on-4th-january");								 
+							});
 
 						}).catch(error => alert(error))
 
@@ -237,7 +243,7 @@ import {mapActions, mapState, mapGetters} from 'vuex'
 									console.log(userDate)
 									
 									 vm.AUTH_REQUEST(userDate).then(() => {
-								        vm.$router.replace("/course");
+								        vm.$router.replace("/see-you-on-4th-january");
 								 
 								      });
 
