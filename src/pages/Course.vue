@@ -3,13 +3,13 @@
 		<div class="container wide-container">
 			<div class="sad">
 				<div class="col-lg-8 col-md-8">
-
-				<iframe :src="getVimeo" width="100%" webkitallowfullscreen frameborder="0" allow="autoplay; fullscreen" allowfullscreen="allowfullscreen" id="videplayer"></iframe>
+<!-- 
+				<iframe :src="getVimeo" width="100%" webkitallowfullscreen frameborder="0" allow="autoplay; fullscreen" allowfullscreen="allowfullscreen" id="videplayer"></iframe> -->
 			
-			<div class="core-sceemer hidden">
-				<button class="shapka-btn gflscreen hidden-md hidden-lg" @click="showFsc">
+			<div class="core-sceemer">
+				<!-- <button class="shapka-btn gflscreen hidden-md hidden-lg" @click="showFsc">
 					<span class="mdi mdi-arrow-expand"></span>
-				</button>
+				</button> -->
 				<vue-core-video-player 
 				:src="getVideoLink" 
 				:controls="true" 
@@ -71,10 +71,42 @@ var elem = document.getElementById("myvideo");
 		},
 		mounted(){
 			this.$store.dispatch('smeta/getLessons')
-			// водяной знак
-			let fscren = document.querySelector('.play-pause-layer')
-	fscren.style.backgroundImage = "url('http://nikitapugachev.com/text.php?email=" + this.user.user_email + "')"
-			// водяной знак
+			
+			let vcpContainer = document.querySelector('.vcp-container');
+			let fsWatermark = document.createElement('div');
+
+
+			fsWatermark.className = 'redmark';
+			vcpContainer.prepend(fsWatermark)
+
+
+fsWatermark.style.background = "url('http://nikitapugachev.com/text.php?email=" + this.user.user_email + "')"
+
+
+
+
+			document.querySelector('.play-pause-layer').addEventListener('click', ()=>{
+				const vid = document.querySelector('.vcp-container video')
+				if(this.videoPLayed == false){
+					vid.play();
+					this.videoPLayed = true;
+				}else{
+					vid.pause();
+					this.videoPLayed = false;
+				}
+			});
+			fsWatermark.addEventListener('click', ()=>{
+				const vid = document.querySelector('.vcp-container video')
+				if(this.videoPLayed == false){
+					vid.play();
+					this.videoPLayed = true;
+				}else{
+					vid.pause();
+					this.videoPLayed = false;
+				}
+			})
+
+
 
 
 			
@@ -101,6 +133,34 @@ var elem = document.getElementById("myvideo");
 
 
 <style scoped>
+	.core-sceemer{
+		position: relative;
+	}
+	.watermark{
+		position: absolute;
+		top:calc(50% - 15%);
+		left: 0;
+		background-color: red;
+		opacity: .2;
+		content: '';
+		width: 100%;
+		height: 30%;
+		z-index: 2000;
+		background-repeat: no-repeat!important;
+		background-position: center!important;
+		background-size: 70%!important;
+		background-color: none!important;
+	}
+	.volume-control .btn-control-panel .progress{
+		overflow: inherit!important;
+	}
+	.volume-control .btn-control-panel .progress .volume-current .thumb-drag{
+		opacity: 1!important;
+	}
+	.volume-control .btn-control-panel .progress:hover{
+		overflow: visible!important;
+	}
+
 #coursepage{
 	padding: 40px 0;
 	min-height: calc(100vh - 123px);

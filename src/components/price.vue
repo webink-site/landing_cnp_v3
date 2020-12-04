@@ -173,7 +173,9 @@ import {mapActions, mapState, mapGetters} from 'vuex'
 			      widget.pay(
 			        "charge",
 			        {
-			          publicId: "pk_1ca6aec798da797a3092eea9157f7",
+			        	// pk_1ca6aec798da797a3092eea9157f7
+			 
+			          publicId: "pk_463a52fd1f96e20662138f9fec087",
 			          description: "Покупка курса за: " + form.cost + "₽",
 			          amount: form.cost,
 			          currency: "RUB",
@@ -192,7 +194,6 @@ import {mapActions, mapState, mapGetters} from 'vuex'
 						.post('https://nikitapugachev.com/wp-json/np/v1/change/usertype', form)
 						.then(res =>{
 
-							// console.log(res)
 							vm.UPDATE_TAGS(res.data.tags).then(() => {
 								vm.$router.replace("/see-you-on-4th-january");								 
 							});

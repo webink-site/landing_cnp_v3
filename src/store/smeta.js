@@ -28,6 +28,7 @@ const smeta = {
         },
         SET_TAGS(state, payload){
             state.user.tags = payload
+            localStorage.setItem("user", JSON.stringify(state.user));
         }
 	},
 	actions: {
@@ -84,6 +85,7 @@ const smeta = {
             commit("SET_USER", null);
         },
         UPDATE_TAGS({commit}, payload){
+
             commit("SET_TAGS", payload);
         }
 	},
