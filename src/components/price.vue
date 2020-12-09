@@ -173,9 +173,8 @@ import {mapActions, mapState, mapGetters} from 'vuex'
 			      widget.pay(
 			        "charge",
 			        {
-			        	// pk_1ca6aec798da797a3092eea9157f7
 			 
-			          publicId: "pk_463a52fd1f96e20662138f9fec087",
+			          publicId: "pk_1ca6aec798da797a3092eea9157f7",
 			          description: "Покупка курса за: " + form.cost + "₽",
 			          amount: form.cost,
 			          currency: "RUB",
