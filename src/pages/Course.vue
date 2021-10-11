@@ -80,7 +80,7 @@ var elem = document.getElementById("myvideo");
 			vcpContainer.prepend(fsWatermark)
 
 
-fsWatermark.style.background = "url('http://nikitapugachev.com/text.php?email=" + this.user.user_email + "')"
+fsWatermark.style.background = "url('http://nikitapugachev.ru/text.php?email=" + this.user.user_email + "')"
 
 
 
@@ -125,7 +125,7 @@ fsWatermark.style.background = "url('http://nikitapugachev.com/text.php?email=" 
 			return{
 				vimeoVideo: '474126326',
 				waterMark: 'https://www.risingground.org/wp-content/uploads/2016/08/sample.png',
-				activeLink: [ { "src": "https://nikitapugachev.com/wp-content/uploads/2020/11/1.-vvodnaya-chast-360.mp4", "resolution": "360" }, { "src": "https://nikitapugachev.com/wp-content/uploads/2020/11/1.-vvodnaya-chast-720.mp4", "resolution": "720" }, { "src": "https://nikitapugachev.com/wp-content/uploads/2020/11/1.-vvodnaya-chast.mp4", "resolution": "1080" } ],
+				activeLink: [ { "src": "https://nikitapugachev.ru/wp-content/uploads/2020/11/1.-vvodnaya-chast-360.mp4", "resolution": "360" }, { "src": "https://nikitapugachev.com/wp-content/uploads/2020/11/1.-vvodnaya-chast-720.mp4", "resolution": "720" }, { "src": "https://nikitapugachev.com/wp-content/uploads/2020/11/1.-vvodnaya-chast.mp4", "resolution": "1080" } ],
 			}
 		}
 	}

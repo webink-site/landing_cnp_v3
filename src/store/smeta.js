@@ -34,7 +34,7 @@ const smeta = {
 	actions: {
         async getLessons({commit}){
             try {
-                const { data } = await axios.get(`https://nikitapugachev.com/wp-json/np/v1/get/videos`)
+                const { data } = await axios.get(`https://nikitapugachev.ru/wp-json/np/v1/get/videos`)
                 return commit('SET_LESSONS', data)
             }
             catch (err) {
@@ -43,7 +43,7 @@ const smeta = {
         },
 		 async AUTH_REQUEST({ commit, dispatch }, payload) {
             try {
-                const { data } = await axios.post(`https://nikitapugachev.com/wp-json/jwt-auth/v1/token`, payload)
+                const { data } = await axios.post(`https://nikitapugachev.ru/wp-json/jwt-auth/v1/token`, payload)
                 return dispatch('VALIDATE', data)
             }
             catch (err) {
@@ -62,7 +62,7 @@ const smeta = {
 
             try {
                 const response = await axios({
-                    url: `https://nikitapugachev.com/wp-json/jwt-auth/v1/token/validate`,
+                    url: `https://nikitapugachev.ru/wp-json/jwt-auth/v1/token/validate`,
                     method: 'post',
                     headers: {
                         'Authorization': `Bearer ${user.token}`
