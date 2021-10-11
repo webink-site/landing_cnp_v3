@@ -22,7 +22,7 @@
                                     </div>
                                     <div class="pay-info__paypal">
                                         <p>PayPal<br>
-                                            Почта для перевода: <a target="_blank" href="mailto:hello@nikitapugachev.com" class="blue-text">hello@nikitapugachev.com</a></p>
+                                            Почта для перевода: <a target="_blank" href="mailto:hello@nikitapugachev.ru" class="blue-text">hello@nikitapugachev.ru</a></p>
                                         </div>
                                     </div>
                                 </div>

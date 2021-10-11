@@ -190,7 +190,7 @@ import {mapActions, mapState, mapGetters} from 'vuex'
 			          	// console.log(form)
 			          	// return
 			            axios
-						.post('https://nikitapugachev.com/wp-json/np/v1/change/usertype', form)
+						.post('https://nikitapugachev.ru/wp-json/np/v1/change/usertype', form)
 						.then(res =>{
 
 							vm.UPDATE_TAGS(res.data.tags).then(() => {
@@ -230,7 +230,7 @@ import {mapActions, mapState, mapGetters} from 'vuex'
 			          	 
 
 			          		axios
-							.post('https://nikitapugachev.com/wp-json/np/v1/change/usertype', form)
+							.post('https://nikitapugachev.ru/wp-json/np/v1/change/usertype', form)
 							.then(res =>{
 
 								if(res.data.status_user === 'Пользователь не найден, создаем нового' ){

@@ -14,7 +14,7 @@
                 @click="changeAccordion(index)">
                     <div class="accordion__header">
                         <h3 class="accordion__header-title">{{item.title}}</h3>
-                        <div class="accordion__header-icon"><img src="https://nikitapugachev.com/wp-content/themes/np/assets/img/plus.svg" alt="plus"></div>
+                        <div class="accordion__header-icon"><img src="https://nikitapugachev.ru/wp-content/themes/np/assets/img/plus.svg" alt="plus"></div>
                     </div>
                     <div class="accordion__body">
                         <p class="accordion__body-text">{{item.descr}}</p>
@@ -44,7 +44,7 @@
                 @click="changeAccordion2(index)">
                     <div class="accordion__header">
                         <h3 class="accordion__header-title">{{item.title}}</h3>
-                        <div class="accordion__header-icon"><img src="https://nikitapugachev.com/wp-content/themes/np/assets/img/plus.svg" alt="plus"></div>
+                        <div class="accordion__header-icon"><img src="https://nikitapugachev.ru/wp-content/themes/np/assets/img/plus.svg" alt="plus"></div>
                     </div>
                     <div class="accordion__body">
                         <p class="accordion__body-text">{{item.descr}}</p>
@@ -69,7 +69,7 @@
                 @click="changeAccordion3(index)">
                     <div class="accordion__header">
                         <h3 class="accordion__header-title">{{item.title}}</h3>
-                        <div class="accordion__header-icon"><img src="https://nikitapugachev.com/wp-content/themes/np/assets/img/plus.svg" alt="plus"></div>
+                        <div class="accordion__header-icon"><img src="https://nikitapugachev.ru/wp-content/themes/np/assets/img/plus.svg" alt="plus"></div>
                     </div>
                     <div class="accordion__body">
                         <p class="accordion__body-text">{{item.descr}}</p>

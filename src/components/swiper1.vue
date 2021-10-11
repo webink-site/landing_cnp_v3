@@ -48,13 +48,13 @@ export default{
                   },
             },
             images: [
-              'https://nikitapugachev.com/wp-content/uploads/2020/11/pr1.jpg',
-              'https://nikitapugachev.com/wp-content/uploads/2020/11/pr2.jpg',
-              'https://nikitapugachev.com/wp-content/uploads/2020/11/pr3.jpg',
-              'https://nikitapugachev.com/wp-content/uploads/2020/11/pr4.jpg',
-              'https://nikitapugachev.com/wp-content/uploads/2020/11/pr5.jpg',
-              'https://nikitapugachev.com/wp-content/uploads/2020/11/pr6.jpg',
-              'https://nikitapugachev.com/wp-content/uploads/2020/11/pr7.jpg',
+              'https://nikitapugachev.ru/wp-content/uploads/2020/11/pr1.jpg',
+              'https://nikitapugachev.ru/wp-content/uploads/2020/11/pr2.jpg',
+              'https://nikitapugachev.ru/wp-content/uploads/2020/11/pr3.jpg',
+              'https://nikitapugachev.ru/wp-content/uploads/2020/11/pr4.jpg',
+              'https://nikitapugachev.ru/wp-content/uploads/2020/11/pr5.jpg',
+              'https://nikitapugachev.ru/wp-content/uploads/2020/11/pr6.jpg',
+              'https://nikitapugachev.ru/wp-content/uploads/2020/11/pr7.jpg',
             ]
         }  
     },
