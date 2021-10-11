@@ -3,7 +3,7 @@
 		<div class="container-fluid">
             <div class="shapka">
             	<router-link to="/" tag="a" class="header__logo wow">
-	            	<img src="https://nikitapugachev.com/wp-content/themes/np/assets/img/Logo.svg">
+	            	<img src="https://nikitapugachev.ru/wp-content/themes/np/assets/img/Logo.svg">
 	            </router-link>
 
 	            <div class="log-row" v-if="user === null">
