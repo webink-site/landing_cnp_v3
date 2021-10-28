@@ -154,11 +154,7 @@ import {mapActions, mapState, mapGetters} from 'vuex'
 				}
 
 
-				let form = {
-					user: this.name,
-					cost: param,
-					tag: 'FOOD2'
-				}
+				c
 
 				this.goPayNew(form)
 				
@@ -173,8 +169,9 @@ import {mapActions, mapState, mapGetters} from 'vuex'
 			      widget.pay(
 			        "charge",
 			        {
-			 
-			          publicId: "pk_1ca6aec798da797a3092eea9157f7",
+			//  pk_09e30b3bb74a3dd0f764e8c8c1cd9   тест
+			// pk_1ca6aec798da797a3092eea9157f7 бой
+			          publicId: "pk_09e30b3bb74a3dd0f764e8c8c1cd9",
 			          description: "Покупка курса за: " + form.cost + "₽",
 			          amount: form.cost,
 			          currency: "RUB",

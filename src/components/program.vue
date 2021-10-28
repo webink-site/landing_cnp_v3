@@ -1,121 +1,74 @@
 <template>
-	
-<section class="program">
-    <div class="program__container container ">
-        <h1 class="program__title wow">Программа обучения</h1>
-
-        <div class="program__accordions">
-            <div class="program__accordion-basics accordion wow">
-                <h2 class="program__accordion-title">Основы</h2>
-
-                <div class="accordion__item" v-for="(item, index) in osnovas"
-                :key="index" 
-                :class="{active : item.active}" 
-                @click="changeAccordion(index)">
-                    <div class="accordion__header">
-                        <h3 class="accordion__header-title">{{item.title}}</h3>
-                        <div class="accordion__header-icon"><img src="https://nikitapugachev.ru/wp-content/themes/np/assets/img/plus.svg" alt="plus"></div>
-                    </div>
-                    <div class="accordion__body">
-                        <p class="accordion__body-text">{{item.descr}}</p>
-                    </div>
-                
+    <section id="descrWh">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h2>Программа <br> курса</h2>
+                    <p class="black-txt player-inf">
+                        <img src="../assets/img/play.svg" alt="">35 лекций  
+                        <img src="../assets/img/timer.svg" style="margin-left:5px;">4 недели
+                    </p>
                 </div>
-
-            <div class="col-lg-12 text-center" style="cursor:pointer;" @click="moreProgram()" v-if="!programCount">
-                   <p> <span class="blue-text text-center">Посмотреть всю программу</span> <br> 
-                    <img src="../assets/img/bluearr.svg" class="bluearr"></p>
+                <div class="col-lg-8">
+                    <div class="ac-item" v-for="item in program" :class="{ activeAc : item.active }">
+                        <div class="ac-title" @click="item.active = !item.active">
+                            <h3>{{item.title}}</h3>
+                            <img src="../assets/img/plus.svg" alt="">
+                        </div>
+                        <div class="ac-body">
+                            <p class="black-txt">{{item.descr}}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
-
-
-       
-
-
-            <div class="program__accordions" v-if="programCount">
-            <div class="program__accordion-basics accordion wow">
-                <h2 class="program__accordion-title">Съемка</h2>
-
-                <div class="accordion__item" v-for="(item, index) in semka"
-                :key="index" 
-                :class="{active : item.active}" 
-                @click="changeAccordion2(index)">
-                    <div class="accordion__header">
-                        <h3 class="accordion__header-title">{{item.title}}</h3>
-                        <div class="accordion__header-icon"><img src="https://nikitapugachev.ru/wp-content/themes/np/assets/img/plus.svg" alt="plus"></div>
-                    </div>
-                    <div class="accordion__body">
-                        <p class="accordion__body-text">{{item.descr}}</p>
-                    </div>
-                
-                </div>
-            </div>
-        </div>
-
-
-
-
-
-
-            <div class="program__accordions" v-if="programCount">
-            <div class="program__accordion-basics accordion wow">
-                <h2 class="program__accordion-title">Постпродакшн</h2>
-
-                <div class="accordion__item" v-for="(item, index) in postprod"
-                :key="index" 
-                :class="{active : item.active}" 
-                @click="changeAccordion3(index)">
-                    <div class="accordion__header">
-                        <h3 class="accordion__header-title">{{item.title}}</h3>
-                        <div class="accordion__header-icon"><img src="https://nikitapugachev.ru/wp-content/themes/np/assets/img/plus.svg" alt="plus"></div>
-                    </div>
-                    <div class="accordion__body">
-                        <p class="accordion__body-text">{{item.descr}}</p>
-                    </div>
-                
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 </template>
 
 
 <script>
-import {mapState} from 'vuex'
-	export default{
-		data(){
-	        return{
-	            programCount: false
-	        }
-    	},
-    	computed: {
-    		...mapState('inline', ['osnovas', 'semka', 'postprod'])
-    	},
-    	methods: {
-    		moreProgram(){
-            	this.programCount = true
-        	},
-        	changeAccordion(index, osnovas){
-			this.osnovas.forEach(item =>{
-				item.active = false
-				})
-				this.osnovas[index].active = !this.osnovas[index].active
-			},
-			changeAccordion2(index){
-				this.semka.forEach(item =>{
-					item.active = false
-				})
-				this.semka[index].active = !this.semka[index].active
-			},
-			changeAccordion3(index){
-				this.postprod.forEach(item =>{
-					item.active = false
-				})
-				this.postprod[index].active = !this.postprod[index].active
-			},
-    	}
-	}
+
+export default{
+    data(){
+        return{
+            program: [
+                {
+                    title: 'Оборудование для мобильной съёмки',
+                    active: false,
+                    descr: 'На этом уроке мы разберемся в вечном вопросе сравнения телефона и фотоаппарата. Рассмотрим, как добиться качественного изображения, о чем нужно знать при покупке смартфона для своих съёмок, и стоит ли переходить на iPhone, если у тебя Android.'
+                },
+                {
+                    title: 'Учимся ставить красивый свет',
+                    active: false,
+                    descr: 'Поставим схемы света для портрета и предметной съемки мелких объектов, а также научим работать с естественным освещением. Расскажем, как ставить несколько схем света, на что обращать внимание при съёмке и разберем частые ошибки.'
+                },
+                {
+                    title: 'Видеоэффекты и лайфхаки для съёмки',
+                    active: false,
+                    descr: 'Научимся базовым техникам, которые помогут сделать видео интереснее: съёмки, наезды, пролеты, статичные планы. Как правильно их снять и что для этого может пригодиться. Рассмотрим частые ошибки начинающих. Научимся делать максимально качественное изображение в ваших видео.'
+                },
+                {
+                    title: 'Правильная композиция',
+                    active: false,
+                    descr: 'Научимся основным правилам по композиции. Разберем частые вопросы и базовые правила выставления кадра, а также, как хорошая композиция влияет на качество кадра. На реальных примерах рассмотрим частые ошибки.'
+                },
+                {
+                    title: 'Смартфон или камера',
+                    active: false,
+                    descr: 'На этом уроке мы разберемся в вечном вопросе сравнения телефона и фотоаппарата. Рассмотрим, как добиться качественного изображения, о чем нужно знать при покупке смартфона для своих съёмок, и стоит ли переходить на iPhone, если у тебя Android. Зачем снимать дорогие ролики на телефон. Плюсы и минусы съёмки на камеру. Главные ограничения телефонов. Плюсы и минусы съёмки на телефон.  Как выбрать себе телефон.  iOS vs Android выбираем лучшее. Лучшие телефоны для качественной съёмки.'
+                },
+                {
+                    title: 'Монтаж и публикация ролика',
+                    active: false,
+                    descr: 'Расскажем, как правильно копировать и хранить материал, какие наиболее безопасные и удобные способы передачи файлов без потери качества существуют. Разберемся, в каких форматах и каком разрешении лучше всего сохранять материал для YouTube и остальных социальных сетей. '
+                },
+                {
+                    title: 'Цветокоррекция',
+                    active: false,
+                    descr: 'Профессиональная цветокоррекция отснятого материала в программе DaVinci Resolve 17. '
+                }
+            ]
+        }
+    }
+}
 </script>

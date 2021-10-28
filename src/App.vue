@@ -21,8 +21,8 @@ import Footer from './components/Footer.vue'
 
 export default{
 	components: {Header, Footer},
-	mounted(){
-		
+	created(){
+		this.$store.dispatch("reviews/loadReviews")
 	}
 }
 </script>
