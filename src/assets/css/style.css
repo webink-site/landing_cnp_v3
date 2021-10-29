@@ -184,7 +184,6 @@ font: inherit;
 * {
 animation-duration: 0.01ms !important;
 animation-iteration-count: 1 !important;
-transition-duration: 0.01ms !important;
 scroll-behavior: auto !important;
 }
 }
@@ -680,12 +679,33 @@ h3{
 }
 
 
-
+#payment{
+	padding: 100px 0;
+}
+#payment .container{
+	position: relative;
+}
+#payment .container::before{
+	height: 1px;
+	width: 100%;
+	background-color: #D1D1D1;
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: -100px;
+	opacity: .1;
+}
 .price-box{
 	background: linear-gradient(141.9deg, #1F2C49 0%, #216EC9 100%);
 	border-radius: 20px;
-	padding: 30px 20px;
+	padding: 30px 25px;
+}
+.price-box h3{
 	text-align: center;
+	font-size: 36px;
+	font-weight: 700;
+	line-height: 40px;
+	margin-bottom: 20px;
 }
 .buy-btn{
 	width: 100%;
@@ -695,8 +715,51 @@ h3{
 	color: #111;
 	border-radius: 100px;
 	cursor: pointer;
+	text-align: center;
+	font-weight: 600;
+	transition: all .3s ease;
 }
-
+.buy-btn:hover{
+	background-color: #2E97E5;
+	color: #fff;
+}
+.price-box ul{
+	padding: 0;
+	margin: 0;
+	padding-left: 17px;
+	margin-bottom: 20px;
+}
+.price-box li{
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 20px;
+	margin-bottom: 10px;
+}
+.crossed{
+	color: #2E97E5;
+	text-decoration: line-through;
+}
+.old-price{
+	font-size: 16px;
+	color: #F2F2F2;
+	opacity: 0.5;
+	font-weight: 400;
+	text-decoration: line-through;
+	margin-bottom: 10px;
+}
+.price{
+	font-size: 44px;
+	font-weight: 700;
+	color: #fff;
+	margin-bottom: 15px;display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+.price p{
+	font-size: 18px;
+	font-weight: 400;
+	margin-top: -10px;
+}
 
 
 

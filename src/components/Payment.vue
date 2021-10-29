@@ -10,14 +10,16 @@
                     <div class="price-box">
                         <h3>Ученик</h3>
                         <ul>
-                            <li>dslvkh</li>
-                             <li>dslvkh</li>
-                              <li>dslvkh</li>
-                               <li>dslvkh</li>
-                                <li>dslvkh</li>
+                            <li>Доступ к лекциям курса</li>
+                             <li>4 домашних задания</li>
+                              <li>Доступ к сопроводительным материалам</li>
+                               <li>Доступ к чату со студентами</li>
+                                <li class="crossed">Индивидуальная проверка домашек</li>
+                                <li class="crossed">Доступ к чату с кураторами</li>
+                                <li class="crossed">Проверка выпускной работы от преподавателя</li>
                         </ul>
-                        <div class="old-price">1 900₽</div>
-                        <div class="price">990₽</div>
+                        <div class="old-price">1 900 ₽</div>
+                        <div class="price">990<p>₽</p></div>
                         <div class="buy-btn" @click="goPay(990)">Купить</div>
                     </div>
                 </div>
@@ -43,7 +45,7 @@ export default {
         goPay(price){
 
                     if(!this.user){
-                        alert('пошел нахуй')
+                        this.$router.replace("/enter");
                         return
                     }
 

@@ -10,6 +10,7 @@
         <Students />
         <Reviews />
         <Payment />
+         <Faq />
     <!-- <social /> -->
 	</div>
 </template>
@@ -30,10 +31,11 @@ import How from '../components/How.vue'
 import Students from '../components/Students.vue'
 import Reviews from '../components/Reviews.vue'
 import Payment from '../components/Payment.vue'
+import Faq from '../components/Faq.vue'
 
 
 export default{
-	components: {social, Main, Descr, ForWho, Future, Program, Works, How, Students, Reviews, Payment},
+	components: {social, Main, Descr, ForWho, Future, Program, Works, How, Students, Reviews, Payment, Faq},
 	computed: {
 		...mapState('inline', ['questions']),
         ...mapGetters({ user: "smeta/getUser"}),
