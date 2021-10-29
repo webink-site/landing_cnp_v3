@@ -20,7 +20,9 @@
                         </ul>
                         <div class="old-price">1 900 ₽</div>
                         <div class="price">990<p>₽</p></div>
-                        <div class="buy-btn" @click="goPay(990)">Купить</div>
+                        <div class="buy-btn" v-if="acces" style=" cursor: not-allowed;">Приобретено</div>
+                        <div class="buy-btn" v-else @click="goPay(990)">Купить</div>
+                        
                     </div>
                 </div>
             </div>
@@ -35,7 +37,10 @@ import axios from 'axios'
 
 export default {
     computed: {
-        ...mapGetters({user: "smeta/getUser"})
+        ...mapGetters({
+            user: "smeta/getUser",
+            acces: "smeta/checkAcces"
+        })
     },
     methods: {
         ...mapActions({

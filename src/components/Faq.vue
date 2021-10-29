@@ -77,4 +77,10 @@ export default{
 .ac-body .black-txt{
     color: #fff;
 }
+.ac-item{
+    border-bottom: 1px #d1d1d129 solid;
+}
+.ac-item:first-child {
+    border-top: 1px #d1d1d129 solid;
+}
 </style>

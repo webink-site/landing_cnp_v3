@@ -1,6 +1,7 @@
 <template>
 	<section id="coursepage">
-		<div class="container wide-container">
+		<div class="container-fluid"> 
+			<!-- wide-container -->
 			<div class="sad">
 				<div class="col-lg-8 col-md-8">
 <!-- 

@@ -10,7 +10,7 @@
                                 <h1>Научитесь снимать крутые видео на телефон за 7 дней</h1>
                                 <p style="margin-bottom:20px;"><strong>Узнай все, основы качественной съёмки и создания видеоэффектов на <br>
                                     мобильный. Монтаж и обработка на телефоне iOS/Android.</strong> </p>
-                                <button class="vio-btn">Записаться со скидкой</button>
+                                <button class="vio-btn" v-scroll-to="'#payment'">Записаться со скидкой</button>
                             </div>
                              <div class="col-lg-6">
                                 <div class="main-video">

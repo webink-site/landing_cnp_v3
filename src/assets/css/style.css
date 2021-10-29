@@ -616,13 +616,11 @@ h3{
 	background-image: url('../img/whslarr.svg');
 }
 
-#students .container,
-#reviews .container{
+#students .container{
 	position: relative;
 }
 
-#students .container::before,
-#reviews .container::before{
+#students .container::before{
 	height: 1px;
 	width: 100%;
 	background-color: #D1D1D1;
@@ -682,10 +680,16 @@ h3{
 #payment{
 	padding: 100px 0;
 }
-#payment .container{
+#payment .container,
+#nikita .container,
+#partners .container,
+#myworks .container{
 	position: relative;
 }
-#payment .container::before{
+#payment .container::before,
+#nikita .container::before,
+#partners .container::before,
+#myworks .container::before{
 	height: 1px;
 	width: 100%;
 	background-color: #D1D1D1;
@@ -761,8 +765,62 @@ h3{
 	margin-top: -10px;
 }
 
+/* #nikita */
 
+#nikita{
+	padding-bottom: 100px;
+}
+#nikita h3{
+	font-size: 24px;
+	line-height: 31px;
+}
+.about-nik{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin-bottom: 30px;
+}
+.about-nik img{
+	margin-right: 20px;
+}
+.nik-ava{
+	width: 100%;
+	margin-top: -30px;
+}
+#nikita h4{
+	margin-top: 65px;
+	font-size: 36px;
+	font-weight: 40px;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+#nikita .big-gr{
+	margin-top: 0;
+}
 
+/* Partners */
+#partners{
+	padding: 100px 0;
+}
+.partners-row{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.partners-row img{
+	margin-bottom: 60px;
+}
+
+#myworks{
+	padding: 100px 0;
+}
+#myworks .video-box{
+	overflow: hidden;
+	border-radius: 10px;
+}
+#descr:last-child .container::before{
+	display: none;
+}
 
 
 /*ADAPTIIIIIIIIIV*/
@@ -798,7 +856,121 @@ h3{
  
 }
 @media (max-width: 672px) {
-	
+	#main {
+		padding-top: 300px;
+	}
+	#main .col-lg-12{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	h1{
+		font-size: 42px;
+		line-height: 42px;
+	}
+	.course-bg{
+		padding: 25px;
+		position: relative;
+		z-index: 10;
+	}
+	.footer-box{
+		border-top: none;
+	}
+	.partners-row{
+		flex-wrap: wrap;
+		justify-content: space-around;
+	}
+	.partners-row img{
+		width: 25%;
+		margin: 0 2%;
+		margin-bottom: 45px;
+	}
+	h2{
+		font-size: 42px;
+		line-height: 42px;
+	}
+	#nikita{
+		text-align: center;
+	}
+	.about-nik{
+		text-align: left;
+	}
+	#nikita h3{
+		font-size: 18px;
+	}
+	.about-nik img{
+		height: 25px;
+	}
+	.nik-ava{
+		width: 200px;
+		margin: -30px auto 0 auto;
+	}
+	#nikita h4{
+		margin-top: 0;
+	}
+	.rev-txt{
+		min-height: inherit;
+	}
+	.kabinet{
+		padding: 6px !important;
+	}
+	#descr{
+		padding: 50px 0;
+		padding-bottom: 0;
+	}
+	#descr .container::before,
+	#students .container::before,
+	#nikita .container::before,
+	#partners .container::before,
+	#myworks .container::before,
+	#payment .container::before{
+		bottom: -25px;
+		margin: 0 10px;
+		width: calc(100% - 20px);
+	}
+	.big-wh,
+	.big-gr{
+		font-size: 18px;
+		line-height: 21px;
+	}
+	#descr:nth-child(4){
+		padding-bottom: 25px;
+	}
+	#descrWh{
+		padding: 50px 0;
+		border-radius: 30px 30px 0 0;
+	}
+	#how{
+		border-radius: 0 0 30px 30px;
+	}
+	.ac-title h3{
+		font-size: 24px;
+		line-height: 30px;
+		max-width: 80%;
+	}
+	#works{
+		padding: 0;
+	}
+	.arrows{
+		justify-content: center;
+	}
+	#students{
+		padding:50px 0;
+	}
+	#reviews{
+		padding: 50px 0;
+	}
+	#nikita{
+		padding: 50px 0;
+	}
+	#partners{
+		padding: 50px 0;
+	}
+	#myworks{
+		padding: 50px 0;
+	}
+	#payment{
+		padding: 50px 0;
+	}
 }
 @media (max-width: 512px) {
 	

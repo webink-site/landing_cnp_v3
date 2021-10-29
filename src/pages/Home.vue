@@ -9,6 +9,10 @@
         <How />
         <Students />
         <Reviews />
+        <Nikita />
+        <Partners />
+        <MyWorks />
+
         <Payment />
          <Faq />
     <!-- <social /> -->
@@ -32,10 +36,13 @@ import Students from '../components/Students.vue'
 import Reviews from '../components/Reviews.vue'
 import Payment from '../components/Payment.vue'
 import Faq from '../components/Faq.vue'
+import Nikita from '../components/Nikita.vue'
+import Partners from '../components/Partners.vue'
+import MyWorks from '../components/MyWorks.vue'
 
 
 export default{
-	components: {social, Main, Descr, ForWho, Future, Program, Works, How, Students, Reviews, Payment, Faq},
+	components: {social, Main, Descr, ForWho, Future, Program, Works, How, Students, Reviews, Payment, Faq, Nikita, Partners, MyWorks},
 	computed: {
 		...mapState('inline', ['questions']),
         ...mapGetters({ user: "smeta/getUser"}),
