@@ -24,6 +24,40 @@ font-weight: 700;
 }
 
 #app{
+	position: relative;
+}
+.bgfon{
+	position: absolute;
+	height: 60%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	/* background-image: url(https://nikitapugachev.ru/wp-content/uploads/2020/11/rectangle206.jpg); */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow: hidden;
+	}
+	.bg-video__player{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	min-width: 100%;
+	min-height: 100%;
+	height: 56.25vw;
+	width: 177.78vh;
+	border-width: 0;
+	outline-width: 0;
+	}
+
+
+
+
+#app{
 	 background-color: #111!important;
 	  font-family: 'Proxima Nova'!important;
 }
@@ -377,6 +411,7 @@ h3{
 
 #main{
 	padding-top: 50px ;
+	position: relative;
 }
 .course-bg{
 	background: linear-gradient(141.9deg, #1F2C49 0%, #216EC9 100%);
@@ -821,6 +856,15 @@ h3{
 #descr:last-child .container::before{
 	display: none;
 }
+.video-title{
+	font-size: 16px;
+	font-weight: 700;
+	margin-top: 10px;
+	color: #fff;
+}
+
+
+
 
 
 /*ADAPTIIIIIIIIIV*/
@@ -856,8 +900,21 @@ h3{
  
 }
 @media (max-width: 672px) {
+	.course-bg .icon-box{
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		margin-bottom: 30px;
+	}
+	#main .icon-box h3{
+		margin-bottom: 0;
+	}
+	#main .icon-box img{
+		margin-bottom: 0;
+		margin-right: 10px;
+	}
 	#main {
-		padding-top: 300px;
+		padding-top: 340px;
 	}
 	#main .col-lg-12{
 		padding-left: 0px;
