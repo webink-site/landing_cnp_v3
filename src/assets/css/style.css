@@ -28,7 +28,7 @@ font-weight: 700;
 }
 .bgfon{
 	position: absolute;
-	height: 60%;
+	height: 30%;
 	width: 100%;
 	top: 0;
 	left: 0;
@@ -449,10 +449,11 @@ h3{
 }
 .main-video{
 	position: relative;
-	padding-bottom: 61.25%;
+	padding-bottom: 76.25%;
 	height: 0;
 	overflow: hidden;
 	max-width: 100%;
+	border-radius: 10px;
 }
 .main-video iframe,
 .main-video object,

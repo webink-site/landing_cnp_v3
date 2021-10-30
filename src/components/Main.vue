@@ -19,7 +19,7 @@
                                     мобильный. Монтаж и обработка на телефоне iOS/Android.</strong> </p>
                                 <button class="vio-btn" v-scroll-to="'#payment'">Записаться со скидкой</button>
                             </div>
-                             <div class="col-lg-6">
+                             <div class="col-lg-5 col-lg-offset-1">
                                 <div class="main-video hidden-xs hidden-sm">
                                     <iframe src='https://player.vimeo.com/video/639909245?h=00bc65a83f&loop=1&autopause=0&amp;byline=false&amp;controls=false&amp;fun=false&amp;muted=true&amp;portrait=false&amp;title=false&amp;autoplay=true&amp;transparent=true&amp;gesture=media' frameborder='0' webkitAllowFullScreen="false" mozallowfullscreen="false" allowFullScreen="false"></iframe>
                                 </div>
