@@ -7,7 +7,8 @@ const smeta = {
 		user: null,
 		token: null,
         lessons: [],
-        snack: false
+        snack: false,
+        videos: []
   	},
 	mutations: {
 		SET_TOKEN(state, token) {
@@ -33,7 +34,15 @@ const smeta = {
         UPDATE_USER_ROLE(state, roles){
             state.user.roles = roles
             localStorage.setItem("user", JSON.stringify(state.user));
-        }
+        },
+        SET_VIDEOS(state, videos){
+            state.videos = videos
+
+            state.videos.forEach(item =>{
+                item.active = false
+            })
+            state.videos[0].active = true
+        },
 	},
 	actions: {
         async getLessons({commit}){
@@ -85,6 +94,7 @@ const smeta = {
         },
          async SIGN_OUT({ commit }) {
             localStorage.removeItem("user");
+            localStorage.removeItem("lVideos");
             commit("SET_TOKEN", null);
             commit("SET_USER", null);
         },
@@ -92,9 +102,17 @@ const smeta = {
 
             commit("SET_TAGS", payload);
         },
-        updateUser({commit}, user){
-            commit("UPDATE_USER_ROLE", user.roles)
-        }
+        // updateUser({commit}, user){
+        //     commit("UPDATE_USER_ROLE", user.roles)
+        // },
+        async updateUser({ commit }, user) {
+            try {
+                commit("UPDATE_USER_ROLE", user.roles)
+            }
+            catch (err) {
+            	alert('Ошибка доступа')
+            }
+        },
 	},
 	getters: {
   		getUser(state) {
@@ -124,7 +142,10 @@ const smeta = {
             }else{
                 return false
             }
-        }
+        },
+        getVideos(state){
+            return state.videos
+        },
 	}
 }
 

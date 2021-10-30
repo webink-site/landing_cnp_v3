@@ -748,19 +748,19 @@ h3{
 }
 .buy-btn{
 	width: 100%;
-	background-color: #fff;
+	background-color: #2E97E5;
 	font-size: 18px;
 	padding: 16px;
-	color: #111;
-	border-radius: 100px;
+	color: #fff;
+	border-radius: 5px;
 	cursor: pointer;
 	text-align: center;
 	font-weight: 600;
 	transition: all .3s ease;
 }
 .buy-btn:hover{
-	background-color: #2E97E5;
-	color: #fff;
+	background-color: #fff;
+	color: #111;
 }
 .price-box ul{
 	padding: 0;
@@ -863,6 +863,22 @@ h3{
 	color: #fff;
 }
 
+.tg-btn{
+	background-color: #2E97E6;
+	color: #fff;
+	padding: 20px;
+	font-size: 16px;
+	font-weight: 700;
+	border-radius: 5px;
+	width: 100%;
+	margin-bottom: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.tg-btn img{
+	margin-right: 10px;
+}
 
 
 
@@ -900,6 +916,10 @@ h3{
  
 }
 @media (max-width: 672px) {
+	.no-pad{
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
 	.course-bg .icon-box{
 		display: flex;
 		justify-content: flex-start;

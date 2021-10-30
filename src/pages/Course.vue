@@ -1,35 +1,30 @@
 <template>
-	<section id="coursepage">
+	<div>
+		<section id="coursepage" v-if="videos.length">
 		<div class="container-fluid"> 
 			<!-- wide-container -->
 			<div class="sad">
 				<div class="col-lg-8 col-md-8">
-<!-- 
-				<iframe :src="getVimeo" width="100%" webkitallowfullscreen frameborder="0" allow="autoplay; fullscreen" allowfullscreen="allowfullscreen" id="videplayer"></iframe> -->
+
+				<iframe :src="`https://player.vimeo.com/video/${videoLink}`" width="100%" webkitallowfullscreen frameborder="0" allow="autoplay; fullscreen" allowfullscreen="allowfullscreen" id="videplayer"></iframe>
+				
 			
-			<div class="core-sceemer">
-				<!-- <button class="shapka-btn gflscreen hidden-md hidden-lg" @click="showFsc">
-					<span class="mdi mdi-arrow-expand"></span>
-				</button> -->
-				<vue-core-video-player 
-				:src="getVideoLink" 
-				:controls="true" 
-				:autoplay="false"
-				@play="playFunc">
-				</vue-core-video-player>
 			</div>
-		
-
-
-			</div>
-			<div class="col-lg-4 col-md-4">
+			<div class="col-lg-4 col-md-4 no-pad">
+				<a href="https://t.me/skonzhenko_al" target="_blank">
+					<button class="tg-btn">
+						<img src="../assets/img/tg.svg" alt="">
+						<span>Написать куратору в Telegram</span>
+					</button>
+				</a>
 				<div class="under-scroll">
-					<h3>Бюджетная фуд-съемка для начинающих</h3>
-				<div class="learn__item-descr">{{lessons.length}} Уроков • 3 часа 11 мин</div>
+					<h3>Марафон по съёмке и монтажу видео на телефоне</h3>
+				<div class="learn__item-descr">{{videos.length}} Уроков • 
+					{{Math.floor(globalTime / 60 / 60)}} часа {{Math.floor(globalTime / 60) - ((Math.floor(globalTime / 60 / 60)) * 60)}} мин</div>
 				</div>
 				<div class="scroll-row">
 					<div class="lesson-btn" 
-					v-for="(lesson, index) in lessons" 
+					v-for="(lesson, index) in videos" 
 					:key="index"
 					:class="{actLesson: lesson.active}"
 					@click="changeLesson(index)"> 
@@ -37,96 +32,80 @@
 							<p v-if="lesson.name.length > 33">{{index + 1}}.  {{lesson.name.substring(0,33)+"..."}}</p>
 							<p v-else>{{index + 1}}.  {{(lesson.name)}}</p>
 						</div>
-						<p>{{lesson.time}}</p>
+
+						<p> {{Math.floor(lesson.duration / 60)}}:{{lesson.duration % 60}}</p>
 					</div>
 				</div>
 			</div>
 			</div>
 		</div>
 	</section>
+
+	<div class="preloader" v-else>
+		<div class="text-center">
+			<loading />
+			<h3>Загружаем видео</h3>
+		</div>
+	</div>
+
+</div>
 </template>
 
 
 <script>
 import {mapState, mapGetters} from 'vuex'
+import axios from 'axios'
+import loading from '../components/loading.vue';
 
 var elem = document.getElementById("myvideo");
 
 	export default{
+  components: { loading },
 		methods: {
 			changeLesson(index){
-				this.lessons.forEach(item =>{
+				this.videos.forEach(item =>{
 					item.active = false
 				})
-				this.lessons[index].active = true
-				this.activeLink = this.lessons[index].videoSource
-				this.vimeoVideo = this.lessons[index].video
+				this.videos[index].active = true
+
+				let newLink = this.videos[index].uri
+				this.videoLink = newLink.replace("/videos/", "");
 			},
-			playFunc(){
-				console.log('dsf,mbs,jb')
-			},
-			showFsc(){
-				const vid = document.querySelector('.vcp-container video')
-				vid.webkitEnterFullscreen();
+		},
+		created(){
+
+			const lVideos = JSON.parse(localStorage.getItem("lVideos"))
+			
+
+			if(lVideos){
+				this.videos = lVideos
+				this.videos.forEach(item =>{
+					this.globalTime += item.duration
+				})
+				
+			}else{
+				axios
+				.get('https://nikitapugachev.ru/wp-json/np/v1/get/mvideos')
+				.then(res =>{
+					this.videos = res.data.data
+					localStorage.setItem("lVideos", JSON.stringify(res.data.data));
+					this.videos.forEach(item =>{
+						this.globalTime += item.duration
+					})
+				})
 			}
 		},
-		mounted(){
-			this.$store.dispatch('smeta/getLessons')
-			
-			let vcpContainer = document.querySelector('.vcp-container');
-			let fsWatermark = document.createElement('div');
-
-
-			fsWatermark.className = 'redmark';
-			vcpContainer.prepend(fsWatermark)
-
-
-fsWatermark.style.background = "url('http://nikitapugachev.ru/text.php?email=" + this.user.user_email + "')"
-
-
-
-
-			document.querySelector('.play-pause-layer').addEventListener('click', ()=>{
-				const vid = document.querySelector('.vcp-container video')
-				if(this.videoPLayed == false){
-					vid.play();
-					this.videoPLayed = true;
-				}else{
-					vid.pause();
-					this.videoPLayed = false;
-				}
-			});
-			fsWatermark.addEventListener('click', ()=>{
-				const vid = document.querySelector('.vcp-container video')
-				if(this.videoPLayed == false){
-					vid.play();
-					this.videoPLayed = true;
-				}else{
-					vid.pause();
-					this.videoPLayed = false;
-				}
-			})
-
-
-
-
-			
-		},
 		computed:{
-			getVideoLink(){
-				return this.activeLink
-			},
-			getVimeo(){
-				return `https://player.vimeo.com/video/${this.vimeoVideo}`
-			},
 			...mapState('smeta', ['lessons']),
-			...mapGetters({ user: "smeta/getUser"}),
+			...mapGetters({ 
+				user: "smeta/getUser",
+			}),
 		},
 		data(){
 			return{
-				vimeoVideo: '474126326',
-				waterMark: 'https://www.risingground.org/wp-content/uploads/2016/08/sample.png',
-				activeLink: [ { "src": "https://nikitapugachev.ru/wp-content/uploads/2020/11/1.-vvodnaya-chast-360.mp4", "resolution": "360" }, { "src": "https://nikitapugachev.ru/wp-content/uploads/2020/11/1.-vvodnaya-chast-720.mp4", "resolution": "720" }, { "src": "https://nikitapugachev.ru/wp-content/uploads/2020/11/1.-vvodnaya-chast.mp4", "resolution": "1080" } ],
+				videos: [],
+				videoLink: 618317658,
+				globalTime: null
 			}
 		}
 	}
@@ -163,6 +142,10 @@ fsWatermark.style.background = "url('http://nikitapugachev.ru/text.php?email=" +
 	}
 
 #coursepage{
+	padding: 40px 0;
+	min-height: calc(100vh - 123px);
+}
+.preloader{
 	padding: 40px 0;
 	min-height: calc(100vh - 123px);
 }

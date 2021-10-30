@@ -154,7 +154,7 @@ import {mapActions, mapState, mapGetters} from 'vuex'
 				}
 
 
-				c
+				
 
 				this.goPayNew(form)
 				
@@ -241,7 +241,6 @@ import {mapActions, mapState, mapGetters} from 'vuex'
 									
 									 vm.AUTH_REQUEST(userDate).then(() => {
 								        vm.$router.replace("/see-you-on-4th-january");
-								 
 								      });
 
 								}else{
