@@ -17,7 +17,6 @@
         </div>
         <Payment />
         <Faq />
-    <!-- <social /> -->
 	</div>
 </template>
 
@@ -26,7 +25,6 @@
 
 <script>
 import {mapState, mapGetters} from 'vuex'
-import social from '../components/social.vue'
 import Main from '../components/Main.vue'
 import Descr from '../components/Descr.vue'
 import ForWho from '../components/ForWho.vue'
@@ -45,7 +43,7 @@ import FloatBtn from '../components/FloatBtn.vue'
 
 
 export default{
-	components: {social, Main, Descr, ForWho, Future, Program, Works, How, Students, Reviews, Payment, Faq, Nikita, Partners, MyWorks, FloatBtn},
+	components: {Main, Descr, ForWho, Future, Program, Works, How, Students, Reviews, Payment, Faq, Nikita, Partners, MyWorks, FloatBtn},
 	computed: {
 		...mapState('inline', ['questions']),
         ...mapGetters({ user: "smeta/getUser"}),

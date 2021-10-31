@@ -463,11 +463,11 @@ h3{
 
 .main-video{
 	position: relative;
-	padding-bottom: 74.25%;
+	padding-bottom: 75.25%;
 	height: 0;
 	overflow: hidden;
 	max-width: 100%;
-	border-radius: 10px;
+	border-radius: 15px;
 }
 .main-video iframe,
 .main-video object,
