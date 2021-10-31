@@ -1,20 +1,22 @@
 <template>
 	<div>
-		<Main />
-        <Descr />
-        <ForWho />
-        <Future />
-        <Program />
-        <Works />
-        <How />
-        <Students />
-        <Reviews />
-        <Nikita />
-        <Partners />
-        <MyWorks />
-
+		<div ref="beforePay">
+            <Main />
+            <FloatBtn />
+            <Descr />
+            <ForWho />
+            <Future />
+            <Program />
+            <Works />
+            <How />
+            <Students />
+            <Reviews />
+            <Nikita />
+            <Partners />
+            <MyWorks />
+        </div>
         <Payment />
-         <Faq />
+        <Faq />
     <!-- <social /> -->
 	</div>
 </template>
@@ -39,13 +41,14 @@ import Faq from '../components/Faq.vue'
 import Nikita from '../components/Nikita.vue'
 import Partners from '../components/Partners.vue'
 import MyWorks from '../components/MyWorks.vue'
+import FloatBtn from '../components/FloatBtn.vue'
 
 
 export default{
-	components: {social, Main, Descr, ForWho, Future, Program, Works, How, Students, Reviews, Payment, Faq, Nikita, Partners, MyWorks},
+	components: {social, Main, Descr, ForWho, Future, Program, Works, How, Students, Reviews, Payment, Faq, Nikita, Partners, MyWorks, FloatBtn},
 	computed: {
 		...mapState('inline', ['questions']),
         ...mapGetters({ user: "smeta/getUser"}),
-	}
+	},
 }
 </script>

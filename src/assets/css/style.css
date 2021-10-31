@@ -447,9 +447,23 @@ h3{
 .vio-btn:hover{
 	background-color: #8f2f4a;
 }
+
+.vio-btn2{
+	background-color: #C4315B;
+	font-size: 16px;
+	font-weight: 700;
+	color: #fff;
+	border-radius: 5px;
+	padding: 15px 30px;
+	transition: all .3s ease;
+}
+.vio-btn2:hover{
+	background-color: #8f2f4a;
+}
+
 .main-video{
 	position: relative;
-	padding-bottom: 76.25%;
+	padding-bottom: 74.25%;
 	height: 0;
 	overflow: hidden;
 	max-width: 100%;
@@ -879,6 +893,12 @@ h3{
 }
 .tg-btn img{
 	margin-right: 10px;
+}
+
+#floatBtn{
+	position: sticky;
+	top: calc(100% - 102px);
+	z-index: 100;
 }
 
 
