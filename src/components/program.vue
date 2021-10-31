@@ -10,9 +10,13 @@
                     </p>
                 </div>
                 <div class="col-lg-8">
-                    <div class="ac-item" v-for="item in program" :class="{ activeAc : item.active }">
+                    <div class="ac-item" v-for="(item, index) in program" :class="{ activeAc : item.active }"
+                    :key="index">
                         <div class="ac-title" @click="item.active = !item.active">
-                            <h3>{{item.title}}</h3>
+                            <div>
+                                <p class="black-txt">Модуль {{index + 1}}</p>
+                                <h3>{{item.title}}</h3>
+                            </div>
                             <img src="../assets/img/plus.svg" alt="">
                         </div>
                         <div class="ac-body">

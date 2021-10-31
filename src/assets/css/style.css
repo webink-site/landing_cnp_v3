@@ -374,7 +374,7 @@ h2{
 	font-weight: 700;
 	font-size: 64px;
 	line-height: 64px;
-	margin-bottom: 50px;
+	margin-bottom: 38px;
 }
 h3{
 	font-weight: 700;
@@ -530,7 +530,7 @@ h3{
 	color:#F2F2F2;
 }
 #descr .icon-box{
-	margin-bottom: 30px;
+	margin-bottom: 26px;
 }
 .big-gr{
 	opacity: .5;
@@ -566,7 +566,7 @@ h3{
 	color: #111;
 	font-size: 36px;
 	line-height: 40px;
-	max-width: 50%;
+	max-width: 100%;
 }
 .ac-body{
 	overflow: hidden;
@@ -836,6 +836,8 @@ h3{
 .nik-ava{
 	width: 100%;
 	margin-top: -30px;
+	border-radius: 400px;
+	border:2px #262626 solid;
 }
 #nikita h4{
 	margin-top: 65px;
@@ -852,12 +854,13 @@ h3{
 #partners{
 	padding: 100px 0;
 }
-.partners-row{
+/* .partners-row{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-}
-.partners-row img{
+} */
+#partners img{
+	margin: 0 auto;
 	margin-bottom: 60px;
 }
 
@@ -901,7 +904,15 @@ h3{
 	z-index: 100;
 }
 
-
+#partners .col-xs-4{
+	width: 33.33333333% !important;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#myworks .col-lg-6{
+	margin-bottom: 8px;
+}
 
 
 /*ADAPTIIIIIIIIIV*/
@@ -945,7 +956,7 @@ h3{
 		display: flex;
 		justify-content: flex-start;
 		align-items: center;
-		margin-bottom: 30px;
+		margin-bottom: 8px;
 	}
 	#main .icon-box h3{
 		margin-bottom: 0;
@@ -973,14 +984,14 @@ h3{
 	.footer-box{
 		border-top: none;
 	}
-	.partners-row{
-		flex-wrap: wrap;
-		justify-content: space-around;
+	#partners .col-xs-4{
+		width: 33.33333333% !important;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
-	.partners-row img{
-		width: 25%;
-		margin: 0 2%;
-		margin-bottom: 45px;
+	#partners img{
+		max-width: 100%;
 	}
 	h2{
 		font-size: 42px;
@@ -991,6 +1002,8 @@ h3{
 	}
 	.about-nik{
 		text-align: left;
+		margin-bottom: 20px;
+		padding: 0 20px;
 	}
 	#nikita h3{
 		font-size: 18px;
@@ -1019,9 +1032,13 @@ h3{
 	#students .container::before,
 	#nikita .container::before,
 	#partners .container::before,
-	#myworks .container::before,
 	#payment .container::before{
 		bottom: -25px;
+		margin: 0 10px;
+		width: calc(100% - 20px);
+	}
+	#myworks .container::before{
+		bottom: -100px;
 		margin: 0 10px;
 		width: calc(100% - 20px);
 	}
@@ -1048,8 +1065,13 @@ h3{
 	#works{
 		padding: 0;
 	}
-	.arrows{
-		justify-content: center;
+	#works .container::before{
+		bottom: -25px;
+		margin: 0 10px;
+		width: calc(100% - 20px);
+	}
+	#how{
+		padding:50px 0;
 	}
 	#students{
 		padding:50px 0;
@@ -1061,13 +1083,34 @@ h3{
 		padding: 50px 0;
 	}
 	#partners{
-		padding: 50px 0;
+		padding: 0px 0;
 	}
 	#myworks{
 		padding: 50px 0;
 	}
 	#payment{
-		padding: 50px 0;
+		padding: 0px 0;
+	}
+	#descr h2{
+		margin-bottom: 8px;
+	}
+	#reviews h2{
+		margin-bottom: 8px;
+	}
+	#myworks h2{
+		margin-bottom: 8px;
+	}
+	#desc .icon-box{
+		margin-bottom: 8px;
+	}
+	#descr .big-gr{
+		margin-bottom: 26px;
+	}
+	.vio-btn{
+		margin-bottom: 2px;
+	}
+	.review-box{
+		margin-bottom: 8px;
 	}
 }
 @media (max-width: 512px) {

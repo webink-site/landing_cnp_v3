@@ -5,7 +5,7 @@
                 <div class="col-lg-12">
                     <h2>Преподаватель</h2>
                 </div>
-                <div class="col-lg-5">
+                <div class="col-lg-5 hidden-xs hidden-sm">
                     <div class="about-nik">
                         <img src="../assets/img/ni1.svg" alt="">
                         <h3>Бросил учебу ради съёмок в 16 лет</h3>
@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3">
-                    <img src="../assets/img/nikavatar.png" class="nik-ava">
+                    <img src="../assets/img/nikava.png" class="nik-ava">
                 </div>
                 <div class="col-lg-4">
                     <h4>Никита Пугачев</h4>
@@ -36,6 +36,20 @@
 
                         nikitapugachev 146К</p>
                     </a>
+                </div>
+                <div class="col-lg-5 hidden-lg hidden-md">
+                    <div class="about-nik">
+                        <img src="../assets/img/ni1.svg" alt="">
+                        <h3>Бросил учебу ради съёмок в 16 лет</h3>
+                    </div>
+                    <div class="about-nik">
+                        <img src="../assets/img/ni2.svg" alt="">
+                        <h3>Потратил на собственное обучение и развитие  более 30.000$ </h3>
+                    </div>
+                    <div class="about-nik">
+                        <img src="../assets/img/ni3.svg" alt="">
+                        <h3>Снимает от 7000$ за 45 сек ролик</h3>
+                    </div>
                 </div>
             </div>
         </div>
