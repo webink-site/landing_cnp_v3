@@ -200,7 +200,7 @@ export default {
 								      });
 
 								}else{
-									vm.$router.replace("/enter");
+									 vm.$router.replace("/course");
 								}
 								
 							}).catch(error => alert(error))

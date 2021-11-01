@@ -28,7 +28,7 @@ const routes = [
 		        			next("/")
 		        		}else{
 		        			if(store.getters["smeta/getPotok"]){
-		        				next('/see-you-on-4th-january')
+		        				next('/success')
 		        			}else{
 		        				next()
 		        			}
@@ -48,15 +48,8 @@ const routes = [
 			component: Login,
 		},
 		{
-			path: '/see-you-on-4th-january',
-			component: Purgatory,
-			beforeEnter: (to, from, next) => {
-				if(!store.getters["smeta/getAuthenticated"]){
-					next("/enter")
-				}else{
-					 next()
-				}
-			}
+			path: '/success',
+			component: Purgatory
 		},
 		{
 			path: '/signup',

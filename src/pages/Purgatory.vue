@@ -2,11 +2,11 @@
 	<section id="purgatory">
 		<div class="container text-center">
 			<p class="white-bold grey">
-				✌️🤙 Добро пожаловать на курс по съемке фуд-видео!<br>
-				Мы начнем обучение <span style="color: #fff;">4 января</span>
+				✌️🤙 Добро пожаловать на курс по съемке видео на телефон за 7 дней!<br>
+				У тебя уже есть аккаунт, поэтому <router-link to="/enter" class="blue-text">авторизируйся</router-link> и приступай к обучению
 				<br><br>	
-				Чтобы тебя добавили в закрытый чат для участников <a target="_blank" href="http://t.me/nikitapugachev" class="blue-text">пришли 
-				нам в Telegram</a> свой e-mail <span style="color: #fff;">{{user.user_email}}</span>
+				<!-- Чтобы тебя добавили в закрытый чат для участников <a target="_blank" href="http://t.me/nikitapugachev" class="blue-text">пришли 
+				нам в Telegram</a> свой e-mail <span style="color: #fff;">{{user.user_email}}</span> -->
 			</p>
 		</div>
 	</section>
