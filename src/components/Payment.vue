@@ -123,9 +123,9 @@ export default {
 			        "charge",
 			        {
                         //  pk_09e30b3bb74a3dd0f764e8c8c1cd9   тест
-			// pk_1ca6aec798da797a3092eea9157f7 бой
+			// pk_2b89f85b8a1d9118c9e5b7b7a0c24 бой
 			 
-			          publicId: "pk_09e30b3bb74a3dd0f764e8c8c1cd9",
+			          publicId: "pk_2b89f85b8a1d9118c9e5b7b7a0c24",
 			          description: "Покупка курса за: " + form.cost + "₽",
 			          amount: form.cost,
 			          currency: "RUB",
@@ -167,7 +167,7 @@ export default {
 			      widget.pay(
 			        "charge",
 			        {
-			          publicId: "pk_09e30b3bb74a3dd0f764e8c8c1cd9",
+			          publicId: "pk_2b89f85b8a1d9118c9e5b7b7a0c24",
 			          description: "Покупка курса за: " + form.cost + "₽",
 			          amount: form.cost,
 			          currency: "RUB",
