@@ -196,11 +196,10 @@ export default {
 									
 									 vm.AUTH_REQUEST(userDate).then(() => {
 								        vm.$router.replace("/course");
-
 								      });
 
 								}else{
-									 vm.$router.replace("/course");
+									 vm.$router.replace("/success");
 								}
 								
 							}).catch(error => alert(error))
