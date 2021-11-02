@@ -6,7 +6,7 @@
                     <h2>Программа <br> курса</h2>
                     <p class="black-txt player-inf">
                         <img src="../assets/img/play.svg" alt="">35 лекций  
-                        <img src="../assets/img/timer.svg" style="margin-left:5px;">4 недели
+                        <img src="../assets/img/timer.svg" style="margin-left:5px;">7 дней
                     </p>
                 </div>
                 <div class="col-lg-8">

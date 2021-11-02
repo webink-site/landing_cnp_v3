@@ -38,7 +38,7 @@
                                     <img src="../assets/img/mi2.svg" alt="">
                                     <div>
                                         <h3>Длительность</h3>
-                                        <p>4 недели</p>
+                                        <p>7 дней</p>
                                     </div>
                                 </div>
                             </div>
