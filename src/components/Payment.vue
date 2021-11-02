@@ -82,6 +82,7 @@ export default {
         startPay(param){
 
             fbq('track', 'InitiateCheckout_mob_video');
+			ym(86233447, 'reachGoal', 'Initiate_checkout_mob_video');
 
 				if(this.user){
 					console.log('вы авторизированные, идем платить')
@@ -139,6 +140,7 @@ export default {
 			          onSuccess: function (options) {
 
 			          	fbq('track', 'Purchase_mob_video', {currency: "RUB", value: 990});
+						ym(86233447, 'reachGoal', 'purchase_mob_video');
 
 			            axios
 						.post('https://nikitapugachev.ru/wp-json/np/v1/change/usertype', form)
@@ -181,6 +183,8 @@ export default {
 			          onSuccess: function (options) {
 
                             fbq('track', 'Purchase_mob_video', {currency: "RUB", value: 990});
+							ym(86233447, 'reachGoal', 'purchase_mob_video');
+
 			          		axios
 							.post('https://nikitapugachev.ru/wp-json/np/v1/change/usertype', form)
 							.then(res =>{
