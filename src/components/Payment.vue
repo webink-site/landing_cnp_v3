@@ -18,9 +18,10 @@
 <!--                            <li class="crossed">Индивидуальная проверка домашек</li>
                                 <li class="crossed">Доступ к чату с кураторами</li>
                                 <li class="crossed">Проверка выпускной работы от преподавателя</li> -->
+								<p style="display:none;">{{changePrices}}</p>
                         </ul>
-                        <div class="old-price">1 900 ₽</div>
-                        <div class="price">990<p>₽</p></div>
+                        <div class="old-price">{{oldPrice}} ₽</div>
+                        <div class="price">{{regularPrice}}<p>₽</p></div>
 
                          <div v-if="!user" id="mailView">
 
@@ -31,7 +32,7 @@
 
 
                         <div class="buy-btn" v-if="acces" style=" cursor: not-allowed;">Приобретено</div>
-                        <div class="buy-btn" v-else @click="startPay(990)">Купить</div>
+                        <div class="buy-btn" v-else @click="startPay(regularPrice)">Купить</div>
                     </div>
                 </div>
             </div>
@@ -46,10 +47,13 @@ import axios from 'axios'
 import { required, email, minLength } from "vuelidate/lib/validators";
 
 export default {
+	
     data(){
 		return{
 			name: '',
-			checkmark: false
+			checkmark: false,
+			regularPrice: 0,
+			oldPrice: 0
 		}
 	},
 	validations: {	
@@ -62,7 +66,27 @@ export default {
         ...mapGetters({
             user: "smeta/getUser",
             acces: "smeta/checkAcces"
-        })
+        }),
+		changePrices(){
+			let price = parseInt(this.$route.path.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, ''))
+			console.log(price)
+
+			if(price == 1990){
+				this.regularPrice = 1990
+				this.oldPrice = 3980
+			}else if(price == 2990){
+				this.regularPrice = 2990
+				this.oldPrice = 5990
+			}else if(price == 3990){
+				this.regularPrice = 3990
+				this.oldPrice = 7980
+			}else{
+				this.regularPrice = 990
+				this.oldPrice = 1990
+			}
+
+			return this.regularPrice
+		}
     },
     methods: {
         ...mapActions({
@@ -139,7 +163,7 @@ export default {
 			        {
 			          onSuccess: function (options) {
 
-			          	fbq('track', 'Purchase_mob_video', {currency: "RUB", value: 990});
+			          	fbq('track', 'Purchase_mob_video', {currency: "RUB", value: form.cost});
 						ym(86233447, 'reachGoal', 'purchase_mob_video');
 
 			            axios
@@ -182,7 +206,7 @@ export default {
 			        {
 			          onSuccess: function (options) {
 
-                            fbq('track', 'Purchase_mob_video', {currency: "RUB", value: 990});
+                            fbq('track', 'Purchase_mob_video', {currency: "RUB", value: form.cost});
 							ym(86233447, 'reachGoal', 'purchase_mob_video');
 
 			          		axios

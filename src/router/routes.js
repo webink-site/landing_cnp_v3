@@ -18,6 +18,18 @@ const routes = [
 			component: Home
 		},
 		{
+			path: '/1990',
+			component: Home
+		},
+		{
+			path: '/2990',
+			component: Home
+		},
+		{
+			path: '/3990',
+			component: Home
+		},
+		{
 			path: '/course',
 			component: Course,
 			beforeEnter: (to, from, next) => {
