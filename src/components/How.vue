@@ -3,30 +3,30 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2 >Кому <br>подойдёт</h2>
+                    <h2 >Как проходит <br> обучение</h2>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                     <div class="icon-box">
                         <img src="../assets/img/blcheck.svg" alt="">
                         <h3>Изучаешь тему</h3>
                         <p class="grey-txt">Тебе сразу будут доступны все лекции курса и доступ в общий чат со студентами школы. Изучаешь вводные уроки, осваиваешь работу с  мобильными приложениями и приступаешь к выполнению практических уроков. </p>      
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                     <div class="icon-box">
                         <img src="../assets/img/blcheck.svg" alt="">
                         <h3>Выполняешь домашние задания</h3>
                         <p class="grey-txt">В курсе есть практические уроки по спецэффектами, работе с постановочным светом для портрета которые важно повторить для закрепления знаний. Готовыми домашками можно поделится в общем чате и получить обратную связь от студентов школы.</p>      
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                     <div class="icon-box">
                         <img src="../assets/img/blcheck.svg" alt="">
                         <h3>Общаешься с куратором</h3>
                         <p class="grey-txt">Все вопросы по обучению можно задавать кураторам школы, для этого у нас есть удобный чат-бот в телеграмм для персонального общения и поддержки студентов.</p>      
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                     <div class="icon-box">
                         <img src="../assets/img/blcheck.svg" alt="">
                         <h3>Получаешь знания и портфолио</h3>

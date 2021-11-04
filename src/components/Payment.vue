@@ -4,7 +4,15 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>Оплата</h2>
-                    <div class="sale">Скидка 50% на курс месяца</div>
+                    <!-- <div class="sale">Скидка 50% на курс месяца</div> -->
+					<div class="black-friday">
+                                    <img src="../assets/img/sale.svg" alt="">
+                                    <p class="black-txt">
+                                        <strong>Учавствуй в Чёрной пятнице</strong><br>
+                                        Скидка 50% действует 
+                                        <Countdown :date="getSecondsToTomorrow" @onFinish="finish()"></Countdown>
+                                    </p>
+                                </div>
                 </div>
                 <div class="col-lg-4 col-lg-offset-4">
                     <div class="price-box">
@@ -45,9 +53,10 @@
 import {mapGetters, mapActions} from 'vuex'
 import axios from 'axios'
 import { required, email, minLength } from "vuelidate/lib/validators";
+import Countdown from '../components/Countdown.vue'
 
 export default {
-	
+	components: {Countdown},
     data(){
 		return{
 			name: '',
@@ -86,7 +95,23 @@ export default {
 			}
 
 			return this.regularPrice
-		}
+		},
+		 getTomorrow(){
+            var today = new Date();
+            var tomorrow = new Date(today.getTime() + (24 * 60 * 60 * 1000));
+            return tomorrow.toLocaleString('ru', { month: 'long', day: 'numeric'})
+            return tomorrow
+        },
+        getSecondsToTomorrow() {
+            let now = new Date();
+            let hour = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+            let totalSecondsToday = (hour * 60 + minutes) * 60 + seconds;
+            let totalSecondsInADay = 86400;
+
+            return totalSecondsInADay - totalSecondsToday;
+        }
     },
     methods: {
         ...mapActions({

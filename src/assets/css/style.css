@@ -37,6 +37,10 @@ font-weight: 700;
 	margin-bottom: 8px;
 	margin-left: auto;
 }
+#payment .black-friday{
+	margin-left: auto;
+	margin-right: auto;
+}
 .black-friday img{
 	margin-right: 10px;
 }
