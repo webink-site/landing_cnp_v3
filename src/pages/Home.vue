@@ -9,14 +9,16 @@
             <Program />
             <Works />
             <How />
+            <Faq />
             <Students />
             <Reviews />
             <Nikita />
             <Partners />
+            <Semki />
             <MyWorks />
         </div>
         <Payment />
-        <Faq />
+        <Social />
 	</div>
 </template>
 
@@ -40,10 +42,12 @@ import Nikita from '../components/Nikita.vue'
 import Partners from '../components/Partners.vue'
 import MyWorks from '../components/MyWorks.vue'
 import FloatBtn from '../components/FloatBtn.vue'
+import Social from '../components/social.vue'
+import Semki from '../components/Semki.vue'
 
 
 export default{
-	components: {Main, Descr, ForWho, Future, Program, Works, How, Students, Reviews, Payment, Faq, Nikita, Partners, MyWorks, FloatBtn},
+	components: {Social, Semki, Main, Descr, ForWho, Future, Program, Works, How, Students, Reviews, Payment, Faq, Nikita, Partners, MyWorks, FloatBtn},
 	computed: {
 		...mapState('inline', ['questions']),
         ...mapGetters({ user: "smeta/getUser"}),

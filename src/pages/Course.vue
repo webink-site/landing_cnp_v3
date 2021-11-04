@@ -11,7 +11,7 @@
 			
 			</div>
 			<div class="col-lg-4 col-md-4 no-pad">
-				<a href="https://t.me/skonzhenko_al" target="_blank">
+				<a href="https://t.me/nikitapugachevbot" target="_blank">
 					<button class="tg-btn">
 						<img src="../assets/img/tg.svg" alt="">
 						<span>Написать куратору в Telegram</span>

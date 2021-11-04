@@ -10,11 +10,7 @@
                 </div>
                 <div class="col-lg-8">
                     <swiper ref="mySwiper" :options="swiperOptions" @slideChange="runOnChange">
-                        <swiper-slide >
-                            <div class="video-box">
-                                <iframe src="https://player.vimeo.com/video/632976725?h=180bdbce8a" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%"></iframe>
-                            </div>
-                        </swiper-slide> 
+                        
                         <swiper-slide >
                             <div class="video-box">
                                 <iframe src="https://player.vimeo.com/video/605486734" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%"></iframe>
@@ -46,7 +42,7 @@
                     </swiper>
                     <div class="arrows">
                         <div class="btnPrev"></div>
-                        <span>{{activeSlide}} / 6</span>
+                        <span>{{activeSlide}} / 5</span>
                         <div class="btnNext"></div>
                     </div>
                 </div>

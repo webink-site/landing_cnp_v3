@@ -47,7 +47,7 @@
                                     <img src="../assets/img/mi3.svg" alt="">
                                     <div>
                                         <h3>Практика</h3>
-                                        <p>35 лекций </p>
+                                        <p>24 лекций </p>
                                     </div>
                                 </div>
                             </div>

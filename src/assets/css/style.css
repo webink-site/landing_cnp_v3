@@ -285,6 +285,9 @@ margin-bottom: 20px;
 }
 .footer{
 font-size: 14px;
+position: relative;
+z-index: 20;
+background-color: #111;
 line-height: 20px;
 }
 .footer a,.footer__copyright{
@@ -630,10 +633,12 @@ h3{
 	padding: 0 20px;
 	color: #111;
 }
-#works .container{
+#works .container,
+#how .container{
 	position: relative;
 }
-#works .container::before{
+#works .container::before,
+#how .container::before{
 	height: 1px;
 	width: 100%;
 	background-color: #D1D1D1;
@@ -729,6 +734,13 @@ h3{
 
 #payment{
 	padding: 100px 0;
+	position: relative;
+	z-index: 20;
+	background-color: #111;
+}
+#payment .sale{
+	color: #FEF553;
+	background-color: transparent;
 }
 #payment .container,
 #nikita .container,
@@ -899,9 +911,11 @@ h3{
 }
 
 #floatBtn{
-	position: sticky;
-	top: calc(100% - 102px);
-	z-index: 100;
+	position: fixed;
+	top: calc(100% - 78px);
+	z-index: 10;
+	width: 100%;
+	background-color: #111;
 }
 
 #partners .col-xs-4{
@@ -948,6 +962,25 @@ h3{
  
 }
 @media (max-width: 672px) {
+	.scroll-row .image-box{
+		margin-right: 10px;
+		border-radius: 5px;
+		padding-top: 440px;
+		width: 330px;
+		background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	}
+	#semki{
+		padding: 0;
+		padding-top: 60px;
+	}
+	.scroll-row {
+		padding-left: 12px;
+		display: flex;
+    	overflow-x: scroll;
+		flex-wrap: nowrap !important;
+	}
 	.no-pad{
 		padding-left: 0 !important;
 		padding-right: 0 !important;
@@ -966,7 +999,7 @@ h3{
 		margin-right: 10px;
 	}
 	#main {
-		padding-top: 340px;
+		padding-top: 265px;
 	}
 	#main .col-lg-12{
 		padding-left: 0px;
@@ -1037,10 +1070,16 @@ h3{
 		margin: 0 10px;
 		width: calc(100% - 20px);
 	}
-	#myworks .container::before{
-		bottom: -100px;
+	#how .container::before{
+		bottom: -50px;
 		margin: 0 10px;
 		width: calc(100% - 20px);
+	}
+	#myworks .container::before{
+		display: none;
+	}
+	#myworks{
+		padding: 25px 0;
 	}
 	.big-wh,
 	.big-gr{
@@ -1053,9 +1092,6 @@ h3{
 	#descrWh{
 		padding: 50px 0;
 		border-radius: 30px 30px 0 0;
-	}
-	#how{
-		border-radius: 0 0 30px 30px;
 	}
 	.ac-title h3{
 		font-size: 24px;
@@ -1106,8 +1142,8 @@ h3{
 	#descr .big-gr{
 		margin-bottom: 26px;
 	}
-	.vio-btn{
-		margin-bottom: 2px;
+	#main .vio-btn{
+		display: none;
 	}
 	.review-box{
 		margin-bottom: 8px;
@@ -1359,3 +1395,22 @@ input[type="password"]{
 
 /*player styles*/
 
+
+.scroll-row::-webkit-scrollbar {
+	display: none;
+}
+
+/* Track */
+.scroll-row::-webkit-scrollbar-track {
+	display: none;
+}
+
+/* Handle */
+.scroll-row::-webkit-scrollbar-thumb {
+	display: none;
+}
+
+/* Handle on hover */
+.scroll-row::-webkit-scrollbar-thumb:hover {
+	display: none;
+}
