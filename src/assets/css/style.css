@@ -26,6 +26,23 @@ font-weight: 700;
 #app{
 	position: relative;
 }
+.black-friday{
+	background-color: #fff;
+	border-radius: 8px;
+	padding: 10px 20px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	width: fit-content;
+	margin-bottom: 8px;
+	margin-left: auto;
+}
+.black-friday img{
+	margin-right: 10px;
+}
+.black-friday .black-txt{
+	line-height: 18px;
+}
 .bgfon{
 	position: absolute;
 	height: 30%;
@@ -438,10 +455,10 @@ h3{
 	margin-bottom: 20px;
 }
 .vio-btn{
-	background-color: #C4315B;
+	background-color:#FEF553;
 	font-size: 16px;
 	font-weight: 700;
-	color: #fff;
+	color: #111;
 	border-radius: 50px;
 	padding: 15px 30px;
 	margin-bottom: 60px;
@@ -962,6 +979,10 @@ h3{
  
 }
 @media (max-width: 672px) {
+	.black-friday{
+		width: 100%;
+		margin-left: 0;
+	}
 	.scroll-row .image-box{
 		margin-right: 10px;
 		border-radius: 5px;

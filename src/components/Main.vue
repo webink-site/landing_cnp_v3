@@ -12,8 +12,18 @@
                 <div class="col-lg-12">
                     <div class="course-bg">
                         <div class="row">
+                            <div class="col-lg-12">
+                                <div class="black-friday">
+                                    <img src="../assets/img/sale.svg" alt="">
+                                    <p class="black-txt">
+                                        <strong>Учавствуй в Чёрной пятнице</strong><br>
+                                        Скидка 50% действует 
+                                        <Countdown :date="getSecondsToTomorrow" @onFinish="finish()"></Countdown>
+                                        <!-- {{getSecondsToTomorrow}} -->
+                                    </p>
+                                </div>
+                            </div>
                             <div class="col-lg-6">
-                                <div class="sale">Скидка 50% на курс месяца</div>
                                 <h1>Научитесь снимать крутые видео на телефон за 7 дней</h1>
                                 <p style="margin-bottom:20px;"><strong>Узнай все, основы качественной съёмки и создания видеоэффектов на <br>
                                     мобильный. Монтаж и обработка на телефоне iOS/Android.</strong> </p>
@@ -71,19 +81,36 @@
 
 
 <script>
+import Countdown from '../components/Countdown.vue'
 
 export default{
+    components: {Countdown},
     data(){
        return{
             curentDate: new Date() 
        }
     },
+    methods: {
+        finish(){
+            console.log('Все')
+        }
+    },
     computed :{
         getTomorrow(){
             var today = new Date();
             var tomorrow = new Date(today.getTime() + (24 * 60 * 60 * 1000));
-            console.log()
             return tomorrow.toLocaleString('ru', { month: 'long', day: 'numeric'})
+            return tomorrow
+        },
+        getSecondsToTomorrow() {
+            let now = new Date();
+            let hour = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+            let totalSecondsToday = (hour * 60 + minutes) * 60 + seconds;
+            let totalSecondsInADay = 86400;
+
+            return totalSecondsInADay - totalSecondsToday;
         }
     }
 }
