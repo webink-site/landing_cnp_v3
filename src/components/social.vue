@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <h2>Остались вопросы <br> напиши мне</h2>
+                    <h2>Остались вопросы <br> напиши нам</h2>
             <div class="social-boxes">
                                     <a href="https://t.me/nikitapugachevbot" target="_blank" class="social-box__telegram">
                                         <img src="https://nikitapugachev.ru/wp-content/themes/np/assets/img/telegram.svg" alt="social">

@@ -10,6 +10,7 @@
             <Works />
             <How />
             <Faq />
+            <FreeLesson />
             <Students />
             <Reviews />
             <Nikita />
@@ -44,10 +45,11 @@ import MyWorks from '../components/MyWorks.vue'
 import FloatBtn from '../components/FloatBtn.vue'
 import Social from '../components/social.vue'
 import Semki from '../components/Semki.vue'
+import FreeLesson from '../components/FreeLesson.vue'
 
 
 export default{
-	components: {Social, Semki, Main, Descr, ForWho, Future, Program, Works, How, Students, Reviews, Payment, Faq, Nikita, Partners, MyWorks, FloatBtn},
+	components: {Social, Semki, Main, Descr, ForWho, Future, Program, Works, How, Students, Reviews, Payment, Faq, Nikita, Partners, MyWorks, FloatBtn, FreeLesson},
 	computed: {
 		...mapState('inline', ['questions']),
         ...mapGetters({ user: "smeta/getUser"}),
