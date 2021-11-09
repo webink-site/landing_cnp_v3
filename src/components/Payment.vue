@@ -33,6 +33,12 @@
 
                          <div v-if="!user" id="mailView">
 
+								<!-- <div class="tooli" v-if="($v.name.$dirty && !$v.name.required) || ($v.name.$dirty && !$v.name.email)">
+									<span>Поле должно быть вида: example@mail.ru <br>
+										Недопустимо использование пробелов
+										<br> и посторонних символов!
+									</span>
+								</div> -->
                                 <input type="text" placeholder="Почта" v-model="name" @input="getCheck()"
                                 :class="{errorInp : ($v.name.$dirty && !$v.name.required) || ($v.name.$dirty && !$v.name.email), 'chmark' : checkmark}">
                         </div>
@@ -120,6 +126,7 @@ export default {
             updateUser: "smeta/updateUser"
 	    }),
         getCheck(){
+			this.name = this.name.replace(/\s+/g, '');
 			if(this.$v.name.$invalid) {
 				this.$v.name.$touch();
 				this.checkmark = false
@@ -308,6 +315,7 @@ h2{
 	}
 	.errorInp{
 		border:2px #f44336 solid!important;
+		background-color: #ffe5e3 !important;
 	}
 	.chmark{
 		background-size: 20px;
