@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<!-- <PopNoCross /> -->
+		<PopNoCross />
 		<section id="coursepage" v-if="videos.length">
 		<div class="container-fluid"> 
 			<!-- wide-container -->
