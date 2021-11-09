@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<PopNoCross />
+		<!-- <PopNoCross /> -->
 		<section id="coursepage" v-if="videos.length">
 		<div class="container-fluid"> 
 			<!-- wide-container -->
@@ -23,7 +23,7 @@
 				<div class="learn__item-descr">{{videos.length}} Уроков • 
 					{{Math.floor(globalTime / 60 / 60)}} часа {{Math.floor(globalTime / 60) - ((Math.floor(globalTime / 60 / 60)) * 60)}} мин</div>
 				</div>
-				<div class="scroll-row">
+				<div class="less-scroll-row">
 					<div class="lesson-btn" 
 					v-for="(lesson, index) in videos" 
 					:key="index"
@@ -194,10 +194,10 @@ var elem = document.getElementById("myvideo");
     max-width: 1410px;
 }
 
-.scroll-row{
-	overflow-y: scroll;
-	height: 400px;
-	padding-right: 10px;
+.less-scroll-row{
+	overflow-y: scroll !important;
+	height: 400px !important;
+	padding-right: 10px !important;
 }
 
 
@@ -206,7 +206,7 @@ var elem = document.getElementById("myvideo");
 
 
 
-.scroll-row::-webkit-scrollbar {
+.less-scroll-row::-webkit-scrollbar {
 	width: 3px;
 	margin-left: 15px;
 	border-radius: 5px;
@@ -214,19 +214,19 @@ var elem = document.getElementById("myvideo");
 }
 
 /* Track */
-.scroll-row::-webkit-scrollbar-track {
+.less-scroll-row::-webkit-scrollbar-track {
 	background: #1A1A1A;
 	border-radius: 3px;
 }
 
 /* Handle */
-.scroll-row::-webkit-scrollbar-thumb {
+.less-scroll-row::-webkit-scrollbar-thumb {
 	background: #2E97E6;
 	border-radius: 3px;
 }
 
 /* Handle on hover */
-.scroll-row::-webkit-scrollbar-thumb:hover {
+.less-scroll-row::-webkit-scrollbar-thumb:hover {
 	background: #1A1A1A;
 	border-radius: 3px;
 }
