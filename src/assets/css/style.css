@@ -1013,8 +1013,19 @@ h3{
 	transform: rotate(45deg);
 }
 
-
-
+/* pop-n-cross */
+.pop-n-cross{
+	background-color: #111;
+	position: fixed;
+	z-index: 150;
+	height: 100vh;
+	width: 100vw;
+	left: 0;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
 
 

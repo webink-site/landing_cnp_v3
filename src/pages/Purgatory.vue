@@ -1,5 +1,6 @@
 <template>
 	<section id="purgatory">
+		<!-- <PopNoCross /> -->
 		<div class="container text-center">
 			<p class="white-bold grey">
 				✌️🤙 Добро пожаловать на курс по съемке видео на телефон за 7 дней!<br>
@@ -14,7 +15,10 @@
 
 <script>
 import {mapGetters, mapActions} from 'vuex'
+import PopNoCross from '../components/PopNoCross.vue'
+
 	export default{
+		components: {PopNoCross},
 		computed: {
 			...mapGetters({ user: "smeta/getUser"}),
 		}
