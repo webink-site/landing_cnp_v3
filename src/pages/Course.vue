@@ -30,7 +30,7 @@
 					:class="{actLesson: lesson.active}"
 					@click="changeLesson(index)"> 
 						<div class="lesson-title">
-							<p v-if="lesson.name.length > 33">{{index + 1}}.  {{lesson.name.substring(0,33)+"..."}}</p>
+							<p v-if="lesson.name.length > 33">{{index + 1}}.  {{lesson.name.substring(0,28)+"..."}}</p>
 							<p v-else>{{index + 1}}.  {{(lesson.name)}}</p>
 						</div>
 
