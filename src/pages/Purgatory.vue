@@ -1,6 +1,6 @@
 <template>
 	<section id="purgatory">
-		<!-- <PopNoCross /> -->
+		<PopNoCross />
 		<div class="container text-center">
 			<p class="white-bold grey">
 				✌️🤙 Добро пожаловать на курс по съемке видео на телефон за 7 дней!<br>
@@ -21,6 +21,9 @@ import PopNoCross from '../components/PopNoCross.vue'
 		components: {PopNoCross},
 		computed: {
 			...mapGetters({ user: "smeta/getUser"}),
+		},
+		created(){
+			this.$store.dispatch("smeta/changeBotType", true)
 		}
 	}
 </script>

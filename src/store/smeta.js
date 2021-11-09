@@ -8,7 +8,8 @@ const smeta = {
 		token: null,
         lessons: [],
         snack: false,
-        videos: []
+        videos: [],
+        botPop: false
   	},
 	mutations: {
 		SET_TOKEN(state, token) {
@@ -43,6 +44,9 @@ const smeta = {
             })
             state.videos[0].active = true
         },
+        SET_BOTTYPE(state, type){
+            state.botPop = type
+        }
 	},
 	actions: {
         async getLessons({commit}){
@@ -113,8 +117,14 @@ const smeta = {
             	alert('Ошибка доступа')
             }
         },
+        changeBotType({commit}, type){
+            commit("SET_BOTTYPE", type)
+        }
 	},
 	getters: {
+        getBotPop(state){
+            return state.botPop
+        },
   		getUser(state) {
             return state.user
         },

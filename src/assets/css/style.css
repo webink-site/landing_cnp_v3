@@ -961,7 +961,7 @@ h3{
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-image: url('../img/answer.png')
+	background-image: url('https://nikitapugachev.ru/wp-content/uploads/2021/11/answer.png')
 }
 .answer-box h2{
 	margin-bottom: 10px;
@@ -1026,7 +1026,13 @@ h3{
 	justify-content: center;
 	align-items: center;
 }
-
+.pop-n-cross h2{
+	font-size: 40px;
+	line-height: 50px;
+}
+.pop-n-cross .buy-btn{
+	width: fit-content;
+}
 
 
 

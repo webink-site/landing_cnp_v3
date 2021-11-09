@@ -1,5 +1,6 @@
 <template>
 	<div>
+		<PopNoCross />
 		<section id="coursepage" v-if="videos.length">
 		<div class="container-fluid"> 
 			<!-- wide-container -->
@@ -56,11 +57,12 @@
 import {mapState, mapGetters} from 'vuex'
 import axios from 'axios'
 import loading from '../components/loading.vue';
+import PopNoCross from '../components/PopNoCross.vue'
 
 var elem = document.getElementById("myvideo");
 
 	export default{
-  components: { loading },
+  components: { loading, PopNoCross },
 		methods: {
 			changeLesson(index){
 				this.videos.forEach(item =>{

@@ -205,6 +205,7 @@ export default {
                             // vm.$store.dispatch("smeta/updateUser", res.data.user)
 
 							vm.updateUser(res.data.user).then(() => {
+								this.$store.dispatch("smeta/changeBotType", false)
 								vm.$router.replace("/course");								 
 							});
     
@@ -255,6 +256,7 @@ export default {
 									
 									
 									 vm.AUTH_REQUEST(userDate).then(() => {
+										this.$store.dispatch("smeta/changeBotType", false)
 								        vm.$router.replace("/course");
 								      });
 
