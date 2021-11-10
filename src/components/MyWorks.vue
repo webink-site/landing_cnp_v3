@@ -1,11 +1,11 @@
 <template>
-    <section id="myworks" v-if="videos.length">
+    <section id="myworks">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <h2>Работы</h2>
                 </div>
-                <div class="col-lg-6" v-for="item in videos" >
+                <div class="col-lg-6" v-for="item in videos" v-if="videos.length">
                     <div class="video-box">
                         <iframe :src="`https://player.vimeo.com/video/${item[0].id}`" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%"></iframe>
                     </div>
