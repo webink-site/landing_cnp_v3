@@ -899,6 +899,7 @@ h3{
 
 #myworks{
 	padding: 100px 0;
+	min-height: 1178px;
 }
 #myworks .video-box{
 	overflow: hidden;
@@ -1193,6 +1194,7 @@ h3{
 	}
 	#myworks{
 		padding: 25px 0;
+		min-height: 1348px;
 	}
 	.big-wh,
 	.big-gr{
