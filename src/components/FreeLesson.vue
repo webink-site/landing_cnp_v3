@@ -5,7 +5,7 @@
                 <div class="answer-box text-center">
                     <h2>Бесплатный урок</h2>
                     
-                    <a href="https://t.me/nikitapugachevbot?start=freevideo">
+                    <a href="https://t.me/nikitapugachevbot?start=freevideo" target="_blank">
                         <button class="white-btn">Пройти бесплатный урок</button>
                     </a>
                 </div>
