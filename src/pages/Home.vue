@@ -10,7 +10,7 @@
             <Works />
             <How />
             <Faq />
-            <FreeLesson />
+            <!-- <FreeLesson /> -->
             <Students />
             <Reviews />
             <Nikita />
