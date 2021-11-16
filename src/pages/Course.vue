@@ -22,6 +22,9 @@
 					<h3>Марафон по съёмке и монтажу видео на телефоне</h3>
 				<div class="learn__item-descr">{{videos.length}} Уроков • 
 					{{Math.floor(globalTime / 60 / 60)}} часа {{Math.floor(globalTime / 60) - ((Math.floor(globalTime / 60 / 60)) * 60)}} мин</div>
+					<p class="blue-link">
+						<a href="https://docs.google.com/document/d/1BhjNrg0749XkHqaPAzxEANPTaTIVwr0j3rR87MPw4fw/edit#heading=h.zgh1yjrnlak8">Ознакомительный список оборудования</a>
+					</p>
 				</div>
 				<div class="less-scroll-row">
 					<div class="lesson-btn" 

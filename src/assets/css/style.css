@@ -1035,9 +1035,18 @@ h3{
 	width: fit-content;
 }
 
-
-
-
+.blue-link{
+	font-weight: 600;
+	padding-bottom: 25px;
+	font-size: 18px;
+}
+.blue-link a{
+	text-decoration: underline;
+	color: #2E97E6;
+}
+.blue-link a:hover{
+	text-decoration: none;
+}
 
 /*ADAPTIIIIIIIIIV*/
 @media (min-width: 1264px){
