@@ -47,8 +47,8 @@
                                 <div class="icon-box">
                                     <img src="../assets/img/mi2.svg" alt="">
                                     <div>
-                                        <h3>Длительность</h3>
-                                        <p>7 дней</p>
+                                        <h3>Доступ</h3>
+                                        <p>90 дней</p>
                                     </div>
                                 </div>
                             </div>
