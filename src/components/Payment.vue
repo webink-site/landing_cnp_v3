@@ -87,17 +87,14 @@ export default {
 			console.log(price)
 
 			if(price == 1990){
-				this.regularPrice = 1990
-				this.oldPrice = 3980
+				this.regularPrice = 990
+				this.oldPrice = 1990
 			}else if(price == 2990){
 				this.regularPrice = 2990
 				this.oldPrice = 5990
-			}else if(price == 3990){
+			}else{
 				this.regularPrice = 3990
 				this.oldPrice = 7980
-			}else{
-				this.regularPrice = 990
-				this.oldPrice = 1990
 			}
 
 			return this.regularPrice
