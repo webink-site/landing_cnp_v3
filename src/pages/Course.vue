@@ -18,6 +18,14 @@
 						<span>Написать куратору в Telegram</span>
 					</button>
 				</a>
+				<a href="https://t.me/joinchat/zFnQjvI5V6o0NWIy" target="_blank">
+					<button class="tg-btn">
+						<img src="../assets/img/tg.svg" alt="">
+						<span>Общий чат школы</span>
+					</button>
+				</a>
+
+
 				<div class="under-scroll">
 					<h3>Марафон по съёмке и монтажу видео на телефоне</h3>
 				<div class="learn__item-descr">{{videos.length}} Уроков • 
